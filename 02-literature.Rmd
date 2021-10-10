@@ -36,7 +36,7 @@ $$a^2 + b^2 = c^2$$
 プリアンブルで設定したコマンドを使ってみる
 
 
-::: {.example name="Pythagorean theorem"}
+::: {.example name="example test"}
 テスト
 $$\N $$
 追加で定義したコマンドは使えるかな

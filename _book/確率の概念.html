@@ -78,7 +78,10 @@
 <li class="chapter" data-level="4" data-path="まとめ.html"><a href="まとめ.html"><i class="fa fa-check"></i><b>4</b> まとめ</a></li>
 <li class="chapter" data-level="5" data-path="確率の概念.html"><a href="確率の概念.html"><i class="fa fa-check"></i><b>5</b> 確率の概念</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="確率の概念.html"><a href="確率の概念.html#順列と組み合わせによる数え上げ"><i class="fa fa-check"></i><b>5.1</b> 順列と組み合わせによる数え上げ</a></li>
+<li class="chapter" data-level="5.1" data-path="確率の概念.html"><a href="確率の概念.html#順列と組み合わせによる数え上げ"><i class="fa fa-check"></i><b>5.1</b> 順列と組み合わせによる数え上げ</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="確率の概念.html"><a href="確率の概念.html#演習問題"><i class="fa fa-check"></i><b>5.1.1</b> 演習問題</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -109,7 +112,34 @@
 <p>と定義されるでしょう．</p>
 <div id="順列と組み合わせによる数え上げ" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> 順列と組み合わせによる数え上げ</h2>
+<p>まず，<span class="math inline">\(n!\)</span>という記号は階乗を表し<span class="math inline">\(n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1\)</span>である．ただしここでは<span class="math inline">\(n \in \mathbb N\)</span>とする．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 5.1  (順列) </strong></span><span class="math inline">\(n\)</span>個の相異なるものの順列を<span class="math inline">\(n!\)</span>と定義する．</p>
+</div>
+<p>さらに，応用として<span class="math inline">\(n\)</span>人全員を並ばせるのではなく，<span class="math inline">\(r(\leq n)\)</span>人だけ並ばせることを考えます．これは順列の計算において<span class="math inline">\(r\)</span>個掛けるだけということになるので</p>
+<p><span class="math display">\[
+  n \times (n-1) \times (n-2) \times \cdots \times (n - r +2) \times (n - r + 1)
+\]</span></p>
+<p>となります．これを<span class="math inline">\(_nP_r\)</span>と書き，階乗を用いて表せば次のようになります．</p>
+<p><span class="math display">\[
+  _n P_r = \frac{n!}{(n-r)!}
+\]</span></p>
+<div id="演習問題" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> 演習問題</h3>
+<p>次の問いに回答してください．</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 5.1  </strong></span>次の問いに回答してください．</p>
+<ol style="list-style-type: decimal">
+<li>6人を右から一列に並ぶときの並び方は何通りあるか．</li>
+<li>6人から3人を一列に並ばせる．このとき並び方は何通りあるか．</li>
+<li>6人から2人を選ぶ組み合わせは何通りあるか．</li>
+<li>6人を2チームに分け，更に2つのチームを横に並べる方法は何通りあるか．この時チーム内の並び方は無視して良い．</li>
+<li>丸いテーブルに6人が座る時，その並びは何通りあるか．<br />
+</li>
+</ol>
+</div>
 
+</div>
 </div>
 </div>
             </section>

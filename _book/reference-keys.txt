@@ -1,5 +1,7 @@
 thm:unlabeled-div-1
 exm:unlabeled-div-2
+def:unlabeled-div-3
+exr:unlabeled-div-4
 はじめに
 イントロダクション
 数式の表現
@@ -7,3 +9,4 @@ exm:unlabeled-div-2
 まとめ
 確率の概念
 順列と組み合わせによる数え上げ
+演習問題

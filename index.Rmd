@@ -10,14 +10,6 @@ bibliography: ["book.bib", "packages.bib"]
 biblio-style: apalike
 link-citations: yes
 header-includes: 
-  - \usepackage{zxjatype} 
-  - \usepackage[ipa]{zxjafont} 
-  - \usepackage{amsthm}
-  - \newtheorem{hypo}{仮説}[section]
-  - \newtheorem{definition}{定義}[section]
-  - \newtheorem{example}{例}[section]
-  - \newtheorem{question}{演習問題}[section]
-  - \newtheorem{theorem}{定理}[section]
   - \newcommand{\N}{\mathbb N}
   - \newcommand{\Z}{\mathbb Z}
   - \newcommand{\Q}{\mathbb Q}
