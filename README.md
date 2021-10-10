@@ -1,3 +1,3 @@
 # bookdown_tutorial
 
-my first bookdown proj
+my first bookdown project.
