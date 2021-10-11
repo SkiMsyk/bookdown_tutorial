@@ -24,7 +24,7 @@
 <meta name="author" content="Masayuki Sakai" />
 
 
-<meta name="date" content="2021-10-10" />
+<meta name="date" content="2021-10-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -80,7 +80,9 @@
 <ul>
 <li class="chapter" data-level="5.1" data-path="確率の概念.html"><a href="確率の概念.html#順列と組み合わせによる数え上げ"><i class="fa fa-check"></i><b>5.1</b> 順列と組み合わせによる数え上げ</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="確率の概念.html"><a href="確率の概念.html#演習問題"><i class="fa fa-check"></i><b>5.1.1</b> 演習問題</a></li>
+<li class="chapter" data-level="5.1.1" data-path="確率の概念.html"><a href="確率の概念.html#順列permutation"><i class="fa fa-check"></i><b>5.1.1</b> 順列：Permutation</a></li>
+<li class="chapter" data-level="5.1.2" data-path="確率の概念.html"><a href="確率の概念.html#組み合わせcombination"><i class="fa fa-check"></i><b>5.1.2</b> 組み合わせ：Combination</a></li>
+<li class="chapter" data-level="5.1.3" data-path="確率の概念.html"><a href="確率の概念.html#演習問題"><i class="fa fa-check"></i><b>5.1.3</b> 演習問題</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -112,6 +114,8 @@
 <p>と定義されるでしょう．</p>
 <div id="順列と組み合わせによる数え上げ" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> 順列と組み合わせによる数え上げ</h2>
+<div id="順列permutation" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> 順列：Permutation</h3>
 <p>まず，<span class="math inline">\(n!\)</span>という記号は階乗を表し<span class="math inline">\(n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1\)</span>である．ただしここでは<span class="math inline">\(n \in \mathbb N\)</span>とする．</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 5.1  (順列) </strong></span><span class="math inline">\(n\)</span>個の相異なるものの順列を<span class="math inline">\(n!\)</span>と定義する．</p>
@@ -124,8 +128,31 @@
 <p><span class="math display">\[
   _n P_r = \frac{n!}{(n-r)!}
 \]</span></p>
-<div id="演習問題" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> 演習問題</h3>
+<p>つぎに，<span class="math inline">\(n\)</span>個のうち同じものとみなせるケースを考えてみましょう．例えば，赤玉と青玉がそれぞれ<span class="math inline">\(n_r\)</span>個，<span class="math inline">\(n_b\)</span>個ずつあると考えます．
+このとき赤玉同士，青玉同士は区別しない並べ方は何通りあるでしょうか？このような場合は次の手順で考えていきます．</p>
+<ol style="list-style-type: decimal">
+<li>まず先ほどの順列と同じように，全てを区別して何通りの並べ方があるか考える</li>
+<li>本来区別せずに数えるべきものが何通りあったかを考える</li>
+<li>1と2から求めたかった場合の数を計算する</li>
+</ol>
+<p>1については赤玉と青玉の数の合計<span class="math inline">\(n = n_r + n_b\)</span>個から，<span class="math inline">\(n! = (n_r + n_b)!\)</span>となります．2について考えていきましょう．1では赤玉同士も全て区別して数え上げていますが，本来は区別したくありません．
+考えてみると，赤玉と青玉それぞれの並べ方は<span class="math inline">\(n_r!, n_b!\)</span>通りあることがわかります．そして，赤玉・青玉は1の考え方では<span class="math inline">\(n_r!, n_b!\)</span>個ずつ重複して数え上げを行っていることがわかります．以上のことから3としては</p>
+<p><span class="math display">\[
+  \frac{n!}{n_r! n_b!}
+\]</span>
+とすれば，求めたい数になることがわかりました．</p>
+<p>更にこれ一般化し，全体の中に<span class="math inline">\(m\)</span>個種類のものが<span class="math inline">\(n_1, \ldots, n_m\)</span>個ずつあるとき，同じ種類のものを区別しないで並べる方法は<span class="math inline">\(n=\sum_{i=1}^{m} n_i\)</span>として</p>
+<p><span class="math display">\[
+  \frac{n!}{\Pi_{i=1}^m n_i!}
+\]</span>
+となります．</p>
+<p>通常の順列は，上記のケースにおいて<span class="math inline">\(m\)</span>種類のものがそれぞれ1個ずつしかないという特別な場合と考えることもできます．</p>
+</div>
+<div id="組み合わせcombination" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> 組み合わせ：Combination</h3>
+</div>
+<div id="演習問題" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> 演習問題</h3>
 <p>次の問いに回答してください．</p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 5.1  </strong></span>次の問いに回答してください．</p>

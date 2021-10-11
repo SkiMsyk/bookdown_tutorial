@@ -9,4 +9,6 @@ exr:unlabeled-div-4
 まとめ
 確率の概念
 順列と組み合わせによる数え上げ
+順列permutation
+組み合わせcombination
 演習問題
