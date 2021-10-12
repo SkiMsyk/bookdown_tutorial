@@ -1,7 +1,18 @@
 thm:unlabeled-div-1
 exm:unlabeled-div-2
 def:unlabeled-div-3
+eq:def-permutaion
+eq:def-generalized-permutation
+eq:def-combination
 exr:unlabeled-div-4
+exr:unlabeled-div-5
+eq:prob-axiom
+eq:subset-prob
+exr:unlabeled-div-6
+eq:prob-union
+eq:generalized-prob-union
+eq:prob-compliment
+exr:unlabeled-div-7
 はじめに
 イントロダクション
 数式の表現
@@ -12,3 +23,8 @@ exr:unlabeled-div-4
 順列permutation
 組み合わせcombination
 演習問題
+集合と確率
+集合の演算と確率
+余事象とその確率
+条件付確率
+ベイズの定理

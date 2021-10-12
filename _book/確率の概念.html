@@ -84,6 +84,13 @@
 <li class="chapter" data-level="5.1.2" data-path="確率の概念.html"><a href="確率の概念.html#組み合わせcombination"><i class="fa fa-check"></i><b>5.1.2</b> 組み合わせ：Combination</a></li>
 <li class="chapter" data-level="5.1.3" data-path="確率の概念.html"><a href="確率の概念.html#演習問題"><i class="fa fa-check"></i><b>5.1.3</b> 演習問題</a></li>
 </ul></li>
+<li class="chapter" data-level="5.2" data-path="確率の概念.html"><a href="確率の概念.html#集合と確率"><i class="fa fa-check"></i><b>5.2</b> 集合と確率</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="確率の概念.html"><a href="確率の概念.html#集合の演算と確率"><i class="fa fa-check"></i><b>5.2.1</b> 集合の演算と確率</a></li>
+<li class="chapter" data-level="5.2.2" data-path="確率の概念.html"><a href="確率の概念.html#余事象とその確率"><i class="fa fa-check"></i><b>5.2.2</b> 余事象とその確率</a></li>
+<li class="chapter" data-level="5.2.3" data-path="確率の概念.html"><a href="確率の概念.html#条件付確率"><i class="fa fa-check"></i><b>5.2.3</b> 条件付確率</a></li>
+<li class="chapter" data-level="5.2.4" data-path="確率の概念.html"><a href="確率の概念.html#ベイズの定理"><i class="fa fa-check"></i><b>5.2.4</b> ベイズの定理</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -125,8 +132,11 @@
   n \times (n-1) \times (n-2) \times \cdots \times (n - r +2) \times (n - r + 1)
 \]</span></p>
 <p>となります．これを<span class="math inline">\(_nP_r\)</span>と書き，階乗を用いて表せば次のようになります．</p>
-<p><span class="math display">\[
+<p><span class="math display" id="eq:def-permutaion">\[
+\begin{equation}
   _n P_r = \frac{n!}{(n-r)!}
+  \tag{5.1}
+\end{equation}
 \]</span></p>
 <p>つぎに，<span class="math inline">\(n\)</span>個のうち同じものとみなせるケースを考えてみましょう．例えば，赤玉と青玉がそれぞれ<span class="math inline">\(n_r\)</span>個，<span class="math inline">\(n_b\)</span>個ずつあると考えます．
 このとき赤玉同士，青玉同士は区別しない並べ方は何通りあるでしょうか？このような場合は次の手順で考えていきます．</p>
@@ -142,20 +152,40 @@
 \]</span>
 とすれば，求めたい数になることがわかりました．</p>
 <p>更にこれ一般化し，全体の中に<span class="math inline">\(m\)</span>個種類のものが<span class="math inline">\(n_1, \ldots, n_m\)</span>個ずつあるとき，同じ種類のものを区別しないで並べる方法は<span class="math inline">\(n=\sum_{i=1}^{m} n_i\)</span>として</p>
-<p><span class="math display">\[
+<p><span class="math display" id="eq:def-generalized-permutation">\[
+\begin{equation}
   \frac{n!}{\Pi_{i=1}^m n_i!}
+  \tag{5.2}
+\end{equation}
 \]</span>
 となります．</p>
 <p>通常の順列は，上記のケースにおいて<span class="math inline">\(m\)</span>種類のものがそれぞれ1個ずつしかないという特別な場合と考えることもできます．</p>
 </div>
 <div id="組み合わせcombination" class="section level3" number="5.1.2">
 <h3><span class="header-section-number">5.1.2</span> 組み合わせ：Combination</h3>
+<p>次に<span class="math inline">\(n\)</span>個のものから<span class="math inline">\(r\)</span>個を選ぶことを考えます．このとき選び方は何通りあるでしょうか？まず，記号としてこれを<span class="math inline">\(n \choose r\)</span>や<span class="math inline">\(_nCr\)</span>と表します．順列を応用して考えると，<span class="math inline">\(_nPr\)</span>という操作は次のように分解できます．</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(n\)</span>個のものから<span class="math inline">\(r\)</span>個を選ぶ（<span class="math inline">\(={_n}C_r\)</span>）</li>
+<li><span class="math inline">\(r\)</span>個を全て並べる（<span class="math inline">\(=r!\)</span>）</li>
+</ol>
+<p>すなわち</p>
+<p><span class="math display">\[
+  _n P_r = {_n C_r} \cdot r!
+\]</span>
+と書き下せます．あとはこの式を<span class="math inline">\(_nC_r\)</span>について表し直せば</p>
+<p><span class="math display" id="eq:def-combination">\[
+\begin{equation}
+  _n C_r = \frac{_nP_r}{r!} = \frac{n!}{(n-r)!r!}
+  \tag{5.3}
+\end{equation}
+\]</span>
+を得ることができました．</p>
 </div>
 <div id="演習問題" class="section level3" number="5.1.3">
 <h3><span class="header-section-number">5.1.3</span> 演習問題</h3>
 <p>次の問いに回答してください．</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 5.1  </strong></span>次の問いに回答してください．</p>
+<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 5.1  (順列と組み合わせの基本) </strong></span>次の問いに回答してください．</p>
 <ol style="list-style-type: decimal">
 <li>6人を右から一列に並ぶときの並び方は何通りあるか．</li>
 <li>6人から3人を一列に並ばせる．このとき並び方は何通りあるか．</li>
@@ -165,6 +195,76 @@
 </li>
 </ol>
 </div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-5" class="exercise"><strong>Exercise 5.2  (誕生日問題) </strong></span>25人の異なる人がいるとして，少なくとも同じ誕生日の人が二人はいるようなケースは何通りあるでしょうか．また，それと全ての25人の誕生日の組み合わせの場合の数との比を取って，同じ誕生日の人がいることが珍しいことかどうか確かめてみてください．
+計算においては，2月29日は考慮しないものとし，誕生日は365日のいずれかであるものとします．</p>
+</div>
+</div>
+</div>
+<div id="集合と確率" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> 集合と確率</h2>
+<p>ここでは集合と確率について考えていきます．集合については「集合と論理」でその定義や基本的な性質を紹介しました．ですのでまずは確率について考えていきましょう．確率を集合に対して定義します．すなわち全体集合<span class="math inline">\(\Omega\)</span>の要素<span class="math inline">\(e_i(i=1,2,\ldots,k)\)</span>に対して，各要素<span class="math inline">\(e_i\)</span>に対応する値<span class="math inline">\(P(e_i)\)</span>が与えられていて，更に次を満たすとします．</p>
+<p><span class="math display" id="eq:prob-axiom">\[
+\begin{equation}
+  \begin{aligned}
+  &amp; 0 \leq P(e_i) \leq 1, \hspace{5mm} i=1,2,\ldots,k \\
+  &amp; \sum_{i=1}^{k} P(e_i) = 1
+  \end{aligned}
+  \tag{5.4}
+\end{equation}
+\]</span></p>
+<p>このとき，集合<span class="math inline">\(A \in \Omega\)</span>のに対して，その確率<span class="math inline">\(P(A)\)</span>を次のように定義します．</p>
+<p><span class="math display" id="eq:subset-prob">\[
+\begin{equation}
+  P(A) = \sum_{e_i \in A} P(e_i)
+  \tag{5.5}
+\end{equation}
+\]</span></p>
+<p>ただし，空集合<span class="math inline">\(\emptyset\)</span>に対する確率は<span class="math inline">\(0\)</span>とします．つまり<span class="math inline">\(P(\emptyset) = 0\)</span>です．以上より，任意の集合<span class="math inline">\(A\)</span>に対して<span class="math inline">\(0 \leq P(A) \leq 1\)</span>であり，<span class="math inline">\(P(\Omega) = 1\)</span>であることがわかります．以降は，確率が定義された集合を<strong>事象</strong>と呼びます．</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Exercise 5.3  </strong></span>面が<span class="math inline">\(1 \sim 6\)</span>まであるサイコロについて，全体集合<span class="math inline">\(\Omega = \{1,2,3,4,5,6 \}\)</span>として，<a href="確率の概念.html#eq:prob-axiom">(5.4)</a>を満たすような<span class="math inline">\(P(e_i)\)</span>をそれぞれ定めてください．ただし，全ての<span class="math inline">\(e_i\)</span>に対して，<span class="math inline">\(P(e_i) = 1/6\)</span>とする方法以外で考えてください．</p>
+</div>
+<div id="集合の演算と確率" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> 集合の演算と確率</h3>
+<p>先ほど定義した確率と集合の関係から，集合演算の結果の確率についても自然に次式を得ることができます．集合<span class="math inline">\(A,B \in \Omega\)</span>に対してその和事象<span class="math inline">\(A \cup B\)</span>の確率は</p>
+<p><span class="math display" id="eq:prob-union">\[
+\begin{equation}
+\begin{aligned}
+  P(A \cup B) &amp;= \sum_{e_i \in A \cup B} P(e_i) \\
+  &amp;= \sum_{e_i \in A} P(e_i) + \sum_{e_i \in B} - \sum_{e_i \in A \cap B} P(e_i) \\
+  &amp;= P(A) + P(B) - P(A \cap B)
+\end{aligned}
+\tag{5.6}
+\end{equation}
+\]</span></p>
+<p>となります．これを<span class="math inline">\(\bigcup_{i \in I} A_i\)</span>に対して一般化して，あらかじめ<span class="math inline">\(i \neq j\)</span>に対して<span class="math inline">\(A_i \cap A_j = \emptyset\)</span>であるような集合族<span class="math inline">\(\mathcal A = \{ A_i \}_{i \in I}\)</span>を考えます（すなわち<span class="math inline">\(\sqcup_{i \in I} A_i = \Omega\)</span>です），その確率<span class="math inline">\(P(\mathcal A)\)</span>は次のようになります．</p>
+<p><span class="math display" id="eq:generalized-prob-union">\[
+\begin{equation}
+  P(\mathcal A) =  P \left( \bigcup_{i \in I} A_i  \right) = \sum_{i \in I}P(A_i)
+\tag{5.7}
+\end{equation}
+\]</span></p>
+<p>ただし<span class="math inline">\(I\)</span>は添え字集合とします．</p>
+</div>
+<div id="余事象とその確率" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> 余事象とその確率</h3>
+<p>ある事象の補集合を余事象と言います．すなわち<span class="math inline">\(A^{c} = \Omega \hspace{1mm} \backslash \hspace{1mm}  A\)</span>です．明らかに<span class="math inline">\(\Omega = A \cup A^c\)</span>かつ<span class="math inline">\(A \cup A^c = \emptyset\)</span>ですから，</p>
+<p><span class="math display" id="eq:prob-compliment">\[
+\begin{equation}
+  P(A^c) = P(\Omega) - P(A) = 1 - P(A)
+\tag{5.8}
+\end{equation}
+\]</span></p>
+<p>であることがわかります．</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Exercise 5.4  (余事象の応用) </strong></span>A君とB君がジャンケンを勝ち負けが着くまで行い，これを100回繰り返すとします．この時，A君が少なくとも2勝する確率を求めてください．ただし，A君もB君もジャンケンに勝つ確率は共に<span class="math inline">\(1/2\)</span>とします．</p>
+</div>
+</div>
+<div id="条件付確率" class="section level3" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> 条件付確率</h3>
+</div>
+<div id="ベイズの定理" class="section level3" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> ベイズの定理</h3>
 
 </div>
 </div>

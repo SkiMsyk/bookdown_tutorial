@@ -30,7 +30,10 @@ $$
 となります．これを$_nP_r$と書き，階乗を用いて表せば次のようになります．
 
 $$
+\begin{equation}
   _n P_r = \frac{n!}{(n-r)!}
+  (\#eq:def-permutaion)
+\end{equation}
 $$
 
 つぎに，$n$個のうち同じものとみなせるケースを考えてみましょう．例えば，赤玉と青玉がそれぞれ$n_r$個，$n_b$個ずつあると考えます．
@@ -51,7 +54,10 @@ $$
 更にこれ一般化し，全体の中に$m$個種類のものが$n_1, \ldots, n_m$個ずつあるとき，同じ種類のものを区別しないで並べる方法は$n=\sum_{i=1}^{m} n_i$として
 
 $$
+\begin{equation}
   \frac{n!}{\Pi_{i=1}^m n_i!}
+  (\#eq:def-generalized-permutation)
+\end{equation}
 $$
 となります．
 
@@ -60,14 +66,31 @@ $$
 
 ### 組み合わせ：Combination
 
+次に$n$個のものから$r$個を選ぶことを考えます．このとき選び方は何通りあるでしょうか？まず，記号としてこれを$n \choose r$や$_nCr$と表します．順列を応用して考えると，$_nPr$という操作は次のように分解できます．
 
+1. $n$個のものから$r$個を選ぶ（$={_n}C_r$）
+2. $r$個を全て並べる（$=r!$）
 
+すなわち
+
+$$
+  _n P_r = {_n C_r} \cdot r!
+$$
+と書き下せます．あとはこの式を$_nC_r$について表し直せば
+
+$$
+\begin{equation}
+  _n C_r = \frac{_nP_r}{r!} = \frac{n!}{(n-r)!r!}
+  (\#eq:def-combination)
+\end{equation}
+$$
+を得ることができました．
 
 ### 演習問題  
 
 次の問いに回答してください．
 
-::: {.exercise} 
+::: {.exercise name="順列と組み合わせの基本"} 
 次の問いに回答してください．
 
 1. 6人を右から一列に並ぶときの並び方は何通りあるか．
@@ -78,5 +101,139 @@ $$
 :::
 
 
+::: {.exercise name="誕生日問題"}
+25人の異なる人がいるとして，少なくとも同じ誕生日の人が二人はいるようなケースは何通りあるでしょうか．また，それと全ての25人の誕生日の組み合わせの場合の数との比を取って，同じ誕生日の人がいることが珍しいことかどうか確かめてみてください．
+計算においては，2月29日は考慮しないものとし，誕生日は365日のいずれかであるものとします．
+:::
+
+
+## 集合と確率  
+
+ここでは集合と確率について考えていきます．集合については「集合と論理」でその定義や基本的な性質を紹介しました．ですのでまずは確率について考えていきましょう．確率を集合に対して定義します．すなわち全体集合$\Omega$の要素$e_i(i=1,2,\ldots,k)$に対して，各要素$e_i$に対応する値$P(e_i)$が与えられていて，更に次を満たすとします．
+
+$$
+\begin{equation}
+  \begin{aligned}
+  & 0 \leq P(e_i) \leq 1, \hspace{5mm} i=1,2,\ldots,k \\
+  & \sum_{i=1}^{k} P(e_i) = 1
+  \end{aligned}
+  (\#eq:prob-axiom)
+\end{equation}
+$$
+
+このとき，集合$A \in \Omega$のに対して，その確率$P(A)$を次のように定義します．
+
+$$
+\begin{equation}
+  P(A) = \sum_{e_i \in A} P(e_i)
+  (\#eq:subset-prob)
+\end{equation}
+$$
+
+
+ただし，空集合$\emptyset$に対する確率は$0$とします．つまり$P(\emptyset) = 0$です．以上より，任意の集合$A$に対して$0 \leq P(A) \leq 1$であり，$P(\Omega) = 1$であることがわかります．以降は，確率が定義された集合を**事象**と呼びます．
+
+
+::: {.exercise}
+面が$1 \sim 6$まであるサイコロについて，全体集合$\Omega = \{1,2,3,4,5,6 \}$として，\@ref(eq:prob-axiom)を満たすような$P(e_i)$をそれぞれ定めてください．ただし，全ての$e_i$に対して，$P(e_i) = 1/6$とする方法以外で考えてください．
+:::
+
+### 集合の演算と確率  
+
+先ほど定義した確率と集合の関係から，集合演算の結果の確率についても自然に次式を得ることができます．集合$A,B \in \Omega$に対してその和事象$A \cup B$の確率は
+
+$$
+\begin{equation}
+\begin{aligned}
+  P(A \cup B) &= \sum_{e_i \in A \cup B} P(e_i) \\
+  &= \sum_{e_i \in A} P(e_i) + \sum_{e_i \in B} - \sum_{e_i \in A \cap B} P(e_i) \\
+  &= P(A) + P(B) - P(A \cap B)
+\end{aligned}
+(\#eq:prob-union)
+\end{equation}
+$$
+
+となります．これを$\bigcup_{i \in I} A_i$に対して一般化して，あらかじめ$i \neq j$に対して$A_i \cap A_j = \emptyset$であるような集合族$\mathcal A = \{ A_i \}_{i \in I}$を考えます（すなわち$\sqcup_{i \in I} A_i = \Omega$です），その確率$P(\mathcal A)$は次のようになります．
+
+
+$$
+\begin{equation}
+  P(\mathcal A) =  P \left( \bigcup_{i \in I} A_i  \right) = \sum_{i \in I}P(A_i)
+(\#eq:generalized-prob-union)
+\end{equation}
+$$
+
+ただし$I$は添え字集合とします．
+
+### 余事象とその確率  
+
+ある事象の補集合を余事象と言います．すなわち$A^{c} = \Omega \mysetminus A$です．明らかに$\Omega = A \cup A^c$かつ$A \cup A^c = \emptyset$ですから，
+
+
+$$
+\begin{equation}
+  P(A^c) = P(\Omega) - P(A) = 1 - P(A)
+(\#eq:prob-compliment)
+\end{equation}
+$$
+
+であることがわかります．
+
+::: {.exercise name="余事象の応用"}
+A君とB君がジャンケンを勝ち負けが着くまで行い，これを100回繰り返すとします．この時，A君が少なくとも2勝する確率を求めてください．ただし，A君もB君もジャンケンに勝つ確率は共に$1/2$とします．
+:::
+
+
+### 条件付確率  
+
+ここでは，条件付確率（conditional probability）というものを考えていきます．現実的な状況として，我々は何かしらの条件の下での確率を考えることは数多くあります．例えば，身体的な性別毎に寿命が違うことが挙げられます．これは，**性別**という条件の下で人は何歳まで生きるのかという確率を考えていると捉えていることもできるでしょう．
+
+これまでの議論と同様に確率を集合に対して定義するという立場を取ります．いまある一つの事象$B \subset \Omega$を考えます．そして，$\Omega$の取り方によって$B$の確率がどのように変わるのかを考えていきます．いま$^\forall e_i$に対して$0 \leq P(e_i) \leq 1$かつ$P(\Omega) = 1$となるように確率が定められているわけですから，これをそのまま使って$B = \Omega_B$という新たな全体集合を定めた上で$A \subset \Omega_B$という部分集合を考えます（$\Omega$の部分集合$B=\Omega_B$のさらなる部分集合です）．また，$\Omega$上に定められた確率と$\Omega_B$上に定められた確率を明確に区別するために以降はそれぞれ$P$と$P_B$という記号を使うことにします．
+
+さて，$P_B$をこれまで述べてきた確率の定義を満たすように定めたいわけですが
+
+$$
+P_B(A) = \sum_{e_i \in A} P(e_i)
+$$
+
+としてしまうと，$A \neq \Omega$であれば$P_B(B) = P_B(\Omega_B) = \sum_{e_i \in B} P(e_i) = P(B) < 1$となり，全体集合に対する確率が1未満になってしまいます．そこで，$^\forall e_i, e_j \in \Omega_B$に対して
+
+$$
+  \frac{P_B(e_i)}{P_B(e_j)} = \frac{P(e_i)}{P(e_j)}
+$$
+を満たすようにします．これは結局
+
+$$
+  P_B(e_i) = \frac{P_B(e_j)}{P(e_j)} P(e_i) = c P(e_i)
+$$
+
+と表せるので元の全体集合$\Omega$上で定義された$e_i$に対する確率$P(e_i)$に定数$c$を掛けているとみなせます．さらに$P_B(\Omega_B) = 1$となるようにしなければ行けないので
+
+$$
+  \sum_{e_i \in \Omega_B} P_B(e_i) = c \sum_{e_i \in B} P(e_i) = 1
+$$
+
+となることがわかります．これより
+
+$$
+c = \frac{1}{\sum_{e_i \in \Omega_B} P_B(e_i)} = \frac{1}{P(\Omega_B)}
+$$
+
+と設定してあげれば良いこともわかりました．$cP(\Omega_B) = 1$であるので，$^{\forall}e_i \in \Omega_B$について$0 \leq P_B(e_i) \leq 1$を満たすこともわかります．故に$A \subset \Omega_B ( = B)$について確率は
+
+$$
+  P_B(A) = \sum_{e_i \in A} P_B(e_i) = \frac{1}{P(B)} \sum_{e_i \in A} P(e_i) = \frac{P(A)}{P(\Omega_B)}
+$$
+
+という様に，元々$\Omega$上で定められた確率を新たな全体集合$\Omega_B$の確率で割ってあげれば良いことになります．
+
+このような操作を，「事象$B$を与えた時の$A$の条件付確率」と呼び$P(A|B)$と表します．つまり，全体集合$\Omega$の$^{\forall}B \subset \Omega$とその部分集合$A \subset B$に関して
+
+$$
+  P(A|B) = \frac{P(A)}{P(B)}
+$$
+となります．$A \not\subset B$である場合も$A' = A \cap B$に対して条件確率を考えてやれば良い．
+
+### ベイズの定理  
 
 
