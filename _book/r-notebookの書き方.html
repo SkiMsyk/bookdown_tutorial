@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 R Notebookの書き方 | My bookdown tutorial</title>
+  <meta name="description" content="6 R Notebookの書き方 | My bookdown tutorial" />
+  <meta name="generator" content="bookdown 0.24.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 R Notebookの書き方 | My bookdown tutorial" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 R Notebookの書き方 | My bookdown tutorial" />
+  
+  
+  
+
+<meta name="author" content="Masayuki Sakai" />
+
+
+<meta name="date" content="2021-10-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="確率の概念.html"/>
+<link rel="next" href="集合.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> はじめに</a></li>
+<li class="chapter" data-level="2" data-path="rの基本と数学的な基礎事項.html"><a href="rの基本と数学的な基礎事項.html"><i class="fa fa-check"></i><b>2</b> Rの基本と数学的な基礎事項</a></li>
+<li class="chapter" data-level="3" data-path="数式の表現.html"><a href="数式の表現.html"><i class="fa fa-check"></i><b>3</b> 数式の表現</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="数式の表現.html"><a href="数式の表現.html#定理や証明"><i class="fa fa-check"></i><b>3.1</b> 定理や証明</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="まとめ.html"><a href="まとめ.html"><i class="fa fa-check"></i><b>4</b> まとめ</a></li>
+<li class="chapter" data-level="5" data-path="確率の概念.html"><a href="確率の概念.html"><i class="fa fa-check"></i><b>5</b> 確率の概念</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="確率の概念.html"><a href="確率の概念.html#順列と組み合わせによる数え上げ"><i class="fa fa-check"></i><b>5.1</b> 順列と組み合わせによる数え上げ</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="確率の概念.html"><a href="確率の概念.html#順列permutation"><i class="fa fa-check"></i><b>5.1.1</b> 順列：Permutation</a></li>
+<li class="chapter" data-level="5.1.2" data-path="確率の概念.html"><a href="確率の概念.html#組み合わせcombination"><i class="fa fa-check"></i><b>5.1.2</b> 組み合わせ：Combination</a></li>
+<li class="chapter" data-level="5.1.3" data-path="確率の概念.html"><a href="確率の概念.html#演習問題"><i class="fa fa-check"></i><b>5.1.3</b> 演習問題</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="確率の概念.html"><a href="確率の概念.html#集合と確率"><i class="fa fa-check"></i><b>5.2</b> 集合と確率</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="確率の概念.html"><a href="確率の概念.html#集合の演算と確率"><i class="fa fa-check"></i><b>5.2.1</b> 集合の演算と確率</a></li>
+<li class="chapter" data-level="5.2.2" data-path="確率の概念.html"><a href="確率の概念.html#余事象とその確率"><i class="fa fa-check"></i><b>5.2.2</b> 余事象とその確率</a></li>
+<li class="chapter" data-level="5.2.3" data-path="確率の概念.html"><a href="確率の概念.html#条件付確率"><i class="fa fa-check"></i><b>5.2.3</b> 条件付確率</a></li>
+<li class="chapter" data-level="5.2.4" data-path="確率の概念.html"><a href="確率の概念.html#ベイズの定理"><i class="fa fa-check"></i><b>5.2.4</b> ベイズの定理</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html"><i class="fa fa-check"></i><b>6</b> R Notebookの書き方</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#r-notebookの基本html"><i class="fa fa-check"></i><b>6.1</b> R Notebookの基本:HTML</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#r-notebookファイルを作成する"><i class="fa fa-check"></i><b>6.1.1</b> R Notebookファイルを作成する</a></li>
+<li class="chapter" data-level="6.1.2" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#r-notebookによるhtmlの生成"><i class="fa fa-check"></i><b>6.1.2</b> R NotebookによるHTMLの生成</a></li>
+<li class="chapter" data-level="6.1.3" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#yamlヘッダー"><i class="fa fa-check"></i><b>6.1.3</b> YAMLヘッダー</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#markdownの基本的な記法"><i class="fa fa-check"></i><b>6.2</b> Markdownの基本的な記法</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#見出し"><i class="fa fa-check"></i><b>6.2.1</b> 見出し</a></li>
+<li class="chapter" data-level="6.2.2" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#箇条書き"><i class="fa fa-check"></i><b>6.2.2</b> 箇条書き</a></li>
+<li class="chapter" data-level="6.2.3" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#コードブロック"><i class="fa fa-check"></i><b>6.2.3</b> コードブロック</a></li>
+<li class="chapter" data-level="6.2.4" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#その他の書式設定"><i class="fa fa-check"></i><b>6.2.4</b> その他の書式設定</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#rのコードを記述する"><i class="fa fa-check"></i><b>6.3</b> Rのコードを記述する</a></li>
+<li class="chapter" data-level="6.4" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#latex記法"><i class="fa fa-check"></i><b>6.4</b> Latex記法</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#基本的な使い方"><i class="fa fa-check"></i><b>6.4.1</b> 基本的な使い方</a></li>
+<li class="chapter" data-level="6.4.2" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#複数の数式を整列させるalign-gather"><i class="fa fa-check"></i><b>6.4.2</b> 複数の数式を整列させる：align, gather</a></li>
+<li class="chapter" data-level="6.4.3" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#基本的な表記"><i class="fa fa-check"></i><b>6.4.3</b> 基本的な表記</a></li>
+<li class="chapter" data-level="6.4.4" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#微分積分"><i class="fa fa-check"></i><b>6.4.4</b> 微分積分</a></li>
+<li class="chapter" data-level="6.4.5" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#論理演算"><i class="fa fa-check"></i><b>6.4.5</b> 論理演算</a></li>
+<li class="chapter" data-level="6.4.6" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#代表的な集合"><i class="fa fa-check"></i><b>6.4.6</b> 代表的な集合</a></li>
+<li class="chapter" data-level="6.4.7" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#集合演算"><i class="fa fa-check"></i><b>6.4.7</b> 集合演算</a></li>
+<li class="chapter" data-level="6.4.8" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#場合の和確率"><i class="fa fa-check"></i><b>6.4.8</b> 場合の和・確率</a></li>
+<li class="chapter" data-level="6.4.9" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#ベクトルと行列"><i class="fa fa-check"></i><b>6.4.9</b> ベクトルと行列</a></li>
+<li class="chapter" data-level="6.4.10" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#場合分け"><i class="fa fa-check"></i><b>6.4.10</b> 場合分け</a></li>
+<li class="chapter" data-level="6.4.11" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#ギリシャ文字"><i class="fa fa-check"></i><b>6.4.11</b> ギリシャ文字</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="集合.html"><a href="集合.html"><i class="fa fa-check"></i><b>7</b> 集合</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="集合.html"><a href="集合.html#集合の定義"><i class="fa fa-check"></i><b>7.1</b> 集合の定義</a></li>
+<li class="chapter" data-level="7.2" data-path="集合.html"><a href="集合.html#基本的な集合"><i class="fa fa-check"></i><b>7.2</b> 基本的な集合</a></li>
+<li class="chapter" data-level="7.3" data-path="集合.html"><a href="集合.html#集合の要素に関する記号"><i class="fa fa-check"></i><b>7.3</b> 集合の要素に関する記号</a></li>
+<li class="chapter" data-level="7.4" data-path="集合.html"><a href="集合.html#部分集合と包含関係"><i class="fa fa-check"></i><b>7.4</b> 部分集合と包含関係</a></li>
+<li class="chapter" data-level="7.5" data-path="集合.html"><a href="集合.html#冪べき集合"><i class="fa fa-check"></i><b>7.5</b> 冪（べき）集合</a></li>
+<li class="chapter" data-level="7.6" data-path="集合.html"><a href="集合.html#集合の演算"><i class="fa fa-check"></i><b>7.6</b> 集合の演算　　</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="集合.html"><a href="集合.html#添字集合"><i class="fa fa-check"></i><b>7.6.1</b> 添字集合</a></li>
+<li class="chapter" data-level="7.6.2" data-path="集合.html"><a href="集合.html#集合族に対する演算"><i class="fa fa-check"></i><b>7.6.2</b> 集合族に対する演算</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="命題.html"><a href="命題.html"><i class="fa fa-check"></i><b>8</b> 命題</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="命題.html"><a href="命題.html#命題の組み合わせ"><i class="fa fa-check"></i><b>8.1</b> 命題の組み合わせ</a></li>
+<li class="chapter" data-level="8.2" data-path="命題.html"><a href="命題.html#十分条件と必要条件"><i class="fa fa-check"></i><b>8.2</b> 十分条件と必要条件</a></li>
+<li class="chapter" data-level="8.3" data-path="命題.html"><a href="命題.html#真偽値表"><i class="fa fa-check"></i><b>8.3</b> 真偽値表</a></li>
+<li class="chapter" data-level="8.4" data-path="命題.html"><a href="命題.html#恒真命題と同値な命題"><i class="fa fa-check"></i><b>8.4</b> 恒真命題と同値な命題</a></li>
+<li class="chapter" data-level="8.5" data-path="命題.html"><a href="命題.html#全称命題と存在命題"><i class="fa fa-check"></i><b>8.5</b> 全称命題と存在命題</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="命題.html"><a href="命題.html#集合と命題関数"><i class="fa fa-check"></i><b>8.5.1</b> 集合と命題関数</a></li>
+<li class="chapter" data-level="8.5.2" data-path="命題.html"><a href="命題.html#全称命題と存在命題-1"><i class="fa fa-check"></i><b>8.5.2</b> 全称命題と存在命題</a></li>
+<li class="chapter" data-level="8.5.3" data-path="命題.html"><a href="命題.html#存在記号と一意な存在"><i class="fa fa-check"></i><b>8.5.3</b> 存在記号と一意な存在</a></li>
+<li class="chapter" data-level="8.5.4" data-path="命題.html"><a href="命題.html#全称命題と存在命題の例"><i class="fa fa-check"></i><b>8.5.4</b> 全称命題と存在命題の例</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">My bookdown tutorial</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-notebookの書き方" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> R Notebookの書き方</h1>
+<p>R NotebookではMarkdownベースの記法に従い文章を執筆することで，HTMLやPDFへ用意な出力が可能になります．</p>
+<div id="r-notebookの基本html" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> R Notebookの基本:HTML</h2>
+<p>R Notebookで記述したドキュメントは，HTMLやPDFなどで出力することができます．PDFを扱う場合は
+少々エラーが起こりやすいのでここではHTMLのみに留めて紹介します．</p>
+<div id="r-notebookファイルを作成する" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> R Notebookファイルを作成する</h3>
+<p>まずR Notebookファイルを作成してみましょう．Rstudioのウィンドウの一番左上にある＋ボタンを押し，R Notebookを選択します．これでR Notebookファイルが作成され新たなウィンドウが表示されます．</p>
+<p><img src="figures/create_new_rnotebook.png" /><!-- --></p>
+</div>
+<div id="r-notebookによるhtmlの生成" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> R NotebookによるHTMLの生成</h3>
+<p>新たなR Notebookファイルが表示されたら，そのままツールバーにあるPreviewの横にある下三角ボタンを押し，Knit to HTMLをクリックします．HTMLを生成する前にファイルを保存するように求められますので適当な場所に保存してください．</p>
+<p><img src="figures/first_knit.png" /><!-- --></p>
+<p>すると，Rのプレビュー機能によりHTMLが表示されます．これでR NotebookによるHTMLの生成は完了です．
+以降は実際にR Notebookの中身を書き換えて再度knit to HTMLを実行することで更新されたHTMLを生成していくことになります．</p>
+<p>生成されたHTMLファイルは，R Notebookファイルがあるところと同じフォルダに保存されます．</p>
+</div>
+<div id="yamlヘッダー" class="section level3" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> YAMLヘッダー</h3>
+<p>R Notebookファイルの先頭には以下のようなコードブロックがあったと思います．これをYAMLヘッダーと呼びます．この部分に適切にノートブックの設定を記述することで生成されるHTMLのフォーマットを変更することができます．その一部をここでは紹介します．</p>
+<p>デフォルトで記述されているYAMLヘッダー．</p>
+<pre><code>---
+title: &quot;R Notebook&quot;
+output: html_notebook
+---</code></pre>
+<p>YAMLヘッダー内では<code>key: value</code>の形式で記述します．入れ子にする場合は</p>
+<pre><code>key1:
+  nested-key1: value1
+  nested-key2: value2</code></pre>
+<p>のように記述します．</p>
+<p>著者名とレポート日付はこのように記述します．</p>
+<pre><code>author: &quot;your name&quot;
+date: &quot;2021年12月31日&quot;</code></pre>
+<p>次に，レポートの目次表示をする場合は以下のように記述します．</p>
+<pre><code>output:
+  html_document:
+    toc: true</code></pre>
+<p>またHTML上で画面内に常に目次を表示するようなfloating tocを利用するには</p>
+<pre><code>output:
+  html_document:
+    toc: true
+    toc_float: true</code></pre>
+<p>とすれば有効になります．</p>
+<p>最後に，これまで紹介してきたヘッダーを合わせると以下のようなYAMLヘッダーになります．</p>
+<pre><code>---
+title: &quot;Report title&quot;
+author: &quot;Your name&quot;
+date: &quot;YYYY-MM-DD&quot;
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---</code></pre>
+<p>レポートを提出する際は，最低限名前と日付は入れておきましょう．</p>
+</div>
+</div>
+<div id="markdownの基本的な記法" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Markdownの基本的な記法</h2>
+<p>ここではMarkdownと呼ばれる記法について紹介します．Markdown自体は色々なサービスでも採用されている
+記法です．その中でも基本的な見出し・箇条書き（番号あり・なし）コードブロック・その他書式設定について紹介していきます．</p>
+<div id="見出し" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> 見出し</h3>
+<p>行頭に<code>#</code>をつけることで見出しとして出力することができます．まだ<code>#</code>の数を増やすと入れ子にすることができます．</p>
+<pre><code># 見出し1
+## 見出し2
+### 見出し3</code></pre>
+</div>
+<div id="箇条書き" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> 箇条書き</h3>
+<p>箇条書きについては，以下のように記述します．</p>
+<pre><code>- item1
+  - item2
+- item3
+  - item4
+  - item5
+    - item6</code></pre>
+<p>結果は以下の通りです．</p>
+<ul>
+<li>item1
+<ul>
+<li>item2</li>
+</ul></li>
+<li>item3
+<ul>
+<li>item4</li>
+<li>item5
+<ul>
+<li>item6</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>番号付きにする場合は次のようにします．</p>
+<pre><code>1. item1  
+    1. item2  
+1. item3  
+1. item4  
+    1. item5  
+        1. item6  </code></pre>
+<p>結果は以下の通りです．</p>
+<ol style="list-style-type: decimal">
+<li>item1
+<ol style="list-style-type: decimal">
+<li>item2<br />
+</li>
+</ol></li>
+<li>item3<br />
+</li>
+<li>item4
+<ol style="list-style-type: decimal">
+<li>item5
+<ol style="list-style-type: decimal">
+<li>item6</li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+<div id="コードブロック" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> コードブロック</h3>
+<p>プログラムコードを通常のフォントで表示すると視認性が著しく失われることがあります（ほとんどの場合はそうです）．
+例えば</p>
+<p>a &lt;- function(x){ <br>
+res &lt;- x^3 <br>
+res += 10 <br>
+} <br>
+a(28)</p>
+<p>という簡単なRのコードでも少し読みにくいことがわかると思います．</p>
+<p>そこでMarkdownではプログラムコードはそれに適した書式で表示してくれる記法を用意しています．
+文中においては```で囲み，独立してコードブロックを記述したい場合は</p>
+<pre><code>```
+コードを記述
+```</code></pre>
+<p>とします．</p>
+<p>例を示します．文中にコード<code>program code</code>を表示する．program codeの部分の表示が少し変わっているのがわかると思います．
+これが文中のコード表記です．</p>
+<p>次に，複数行にわたるコードブロックの例を示します．</p>
+<pre><code>a &lt;- function(x){
+  res &lt;- x^3
+  res += 10
+  return(res)
+}
+a(28)</code></pre>
+<p>これはR Notebook内では</p>
+<pre><code>```
+a &lt;- function(x){
+  res &lt;- x^3
+  res += 10
+  return(res)
+}
+```</code></pre>
+<p>と記述しています．プログラムとして読むにあたりかなり読みやすくなっていることがわかります．</p>
+</div>
+<div id="その他の書式設定" class="section level3" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> その他の書式設定</h3>
+<p>最後に，太字・斜体・リンクについて紹介します．太字にする場合<code>**</code>で太字にしたい文字列を囲みます．すると，このように<strong>太字</strong>になります．また，車体にしたい場合は<code>*</code>で文字列を囲みます．<em>斜体</em>になります．</p>
+<p>次に，ある文字列にリンクを貼りたい場合は<code>[文字列](URL)</code>と記述することでリンク付き文字列として出力できます．
+例えば，「自由学園」という文字列に自由学園のHPのリンクを貼る場合は<code>[自由学園のHPはこちら](https://jiyu.ac.jp)</code>とすれば</p>
+<p><a href="https://jiyu.ac.jp">自由学園のHPはこちら</a></p>
+<p>のように，リンク付き文字列となります．</p>
+</div>
+</div>
+<div id="rのコードを記述する" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Rのコードを記述する</h2>
+<p>Rmarkdown中にチャンクと呼ばれるコードブロックを記述すると，そのコードブロック内でRを実行することができます．例えば下記のように記述してみると</p>
+<pre><code>```{r}
+summary(cars)
+```</code></pre>
+<p>というように<code>summary(cars)</code>が実行され，その結果を表示することができます．</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="r-notebookの書き方.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<p>さらに文章中でも実行することができます．その場合は例えば文中に</p>
+<pre><code>`r Sys.Date()`</code></pre>
+<p>というようにすれば実行できます．<code>Sys.Date()</code>という関数はその日の日付を返す関数です．実際にやってみると次のようになります．</p>
+<p>「今日の日付は2021-10-15です．」</p>
+</div>
+<div id="latex記法" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Latex記法</h2>
+<p>Rmarkdown中ではLatexを扱うことができます．Latexについては詳細は割愛しますが，Latexは数式に特化した記法で数式を綺麗に表示することができます．ここでは，本講義で扱うような記号についてのLatex表記を紹介します．Latexの表記自体は数多くあるため全てを紹介することはできませんが，興味のある人はウェブや書籍で調べてみてください．</p>
+<div id="基本的な使い方" class="section level3" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> 基本的な使い方</h3>
+<p>Latexを扱うためには<code>$</code>か<code>$$</code>でLatex記法を囲む必要があります．文中で数式を各場合は<code>$</code>で囲めばよいです．例えば<code>$a + b = c$</code>という記述を文中ですることで「<span class="math inline">\(a + b = c\)</span>」という結果を得ます．</p>
+<p>数式を独立させる場合や複数行にわたる場合は<code>$$</code>で囲みます．記述例としては</p>
+<pre><code>$$
+ f(x) = ax^2 + bx + c \\
+ = h
+$$</code></pre>
+<p>とすることで</p>
+<p><span class="math display">\[
+  f(x) = ax^2 + bx + c \\
+  = h
+\]</span>
+という結果を得ます．<code>\\</code>は改行を意味する記号です．</p>
+</div>
+<div id="複数の数式を整列させるalign-gather" class="section level3" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> 複数の数式を整列させる：align, gather</h3>
+<p>複数行にわたり数式を記述した際，数式を整列させるために<code>align</code>が便利です．</p>
+<pre><code>\begin{align}
+ここに数式を記述する
+\end{align}</code></pre>
+<p>このように<code>\begin{align}</code>と<code>\end{align}</code>で数式を挟みます．</p>
+<p><span class="math display">\[
+\begin{align}
+  f(x) = x^2 + x + 1
+\end{align}
+\]</span>
+また，整列させる場合には各行の揃えたい部分に<code>&amp;</code>を挿入します．</p>
+<pre><code>$$
+\begin{align}
+  f(x) &amp;= x^2 + x + 1 \\
+  &amp;= (x + 0.5)^2 + 0.75
+\end{align}
+$$</code></pre>
+<p><span class="math display">\[
+\begin{align}
+  f(x) &amp;= x^2 + x + 1 \\
+  &amp;= (x + 0.5)^2 + 0.75
+\end{align}
+\]</span>
+このように，それぞれの行において<code>&amp;=</code>としているので<code>=</code>の位置が同じになるように調整されます．</p>
+<p>各行を中央揃えにしたい場合は<code>gather</code>を使います．</p>
+<p><span class="math display">\[
+\begin{gather}
+  f(x) = a + b \\
+  g(x) = a + b + c \\
+  h(x) = a + b + c + d
+\end{gather}
+\]</span></p>
+</div>
+<div id="基本的な表記" class="section level3" number="6.4.3">
+<h3><span class="header-section-number">6.4.3</span> 基本的な表記</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">意味</th>
+<th align="left">Latexコード</th>
+<th align="left">表示</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">足算</td>
+<td align="left"><code>+</code></td>
+<td align="left"><span class="math inline">\(+\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">引算</td>
+<td align="left"><code>-</code></td>
+<td align="left"><span class="math inline">\(-\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">掛算</td>
+<td align="left"><code>\times</code></td>
+<td align="left"><span class="math inline">\(\times\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">割算</td>
+<td align="left"><code>\div</code></td>
+<td align="left"><span class="math inline">\(\div\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">分数</td>
+<td align="left"><code>\frac{a}{b}</code></td>
+<td align="left"><span class="math inline">\(\frac{a}{b}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">プラスマイナス</td>
+<td align="left"><code>\pm</code></td>
+<td align="left"><span class="math inline">\(\pm\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">マイナスプラス</td>
+<td align="left"><code>\mp</code></td>
+<td align="left"><span class="math inline">\(\mp\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">総和</td>
+<td align="left"><code>\sum_{i=1}^{n}</code></td>
+<td align="left"><span class="math inline">\(\sum_{i=1}^{n}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">総乗</td>
+<td align="left"><code>\prod_{i=1}^{n}</code></td>
+<td align="left"><span class="math inline">\(\prod_{i=1}^{n}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">階乗</td>
+<td align="left"><code>n!</code></td>
+<td align="left"><span class="math inline">\(n!\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">点</td>
+<td align="left"><code>\dot</code></td>
+<td align="left"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">中段点列</td>
+<td align="left"><code>\cdots</code></td>
+<td align="left"><span class="math inline">\(\cdots\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">下段点列</td>
+<td align="left"><code>\ldots</code></td>
+<td align="left"><span class="math inline">\(\ldots\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">関数</td>
+<td align="left"><code>f(x)</code></td>
+<td align="left"><span class="math inline">\(f(x)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">無限大</td>
+<td align="left"><code>\infty</code></td>
+<td align="left"><span class="math inline">\(\infty\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">下付き文字</td>
+<td align="left"><code>a_{11}$</code></td>
+<td align="left"><span class="math inline">\(a_{11}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">上付き文字</td>
+<td align="left"><code>b_{\alpha}</code></td>
+<td align="left"><span class="math inline">\(b_{\alpha}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">上下付き文字</td>
+<td align="left"><code>a_{i}^{(k)}</code></td>
+<td align="left"><span class="math inline">\(a_{i}^{(k)}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="微分積分" class="section level3" number="6.4.4">
+<h3><span class="header-section-number">6.4.4</span> 微分積分</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">意味</th>
+<th align="left">Latexコード</th>
+<th align="left">表示</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">微分</td>
+<td align="left"><code>\frac{dy}{dx}</code></td>
+<td align="left"><span class="math inline">\(\frac{dy}{dx}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">微分</td>
+<td align="left"><code>f'(x)</code></td>
+<td align="left"><span class="math inline">\(f&#39;(x)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">微分</td>
+<td align="left"><code>\frac{\partial f}{\partial x}</code></td>
+<td align="left"><span class="math inline">\(\frac{\partial f}{\partial x}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">積分</td>
+<td align="left"><code>\int</code></td>
+<td align="left"><span class="math inline">\(\int\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">２重積分</td>
+<td align="left"><code>\iint</code></td>
+<td align="left"><span class="math inline">\(\iint\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(n\)</span>重積分</td>
+<td align="left"><code>\idotsint</code></td>
+<td align="left"><span class="math inline">\(\idotsint\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="論理演算" class="section level3" number="6.4.5">
+<h3><span class="header-section-number">6.4.5</span> 論理演算</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">意味</th>
+<th align="left">Latexコード</th>
+<th align="left">表示</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ならば</td>
+<td align="left"><code>\Rightarrow</code></td>
+<td align="left"><span class="math inline">\(\Rightarrow\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">同値</td>
+<td align="left"><code>\Leftrightarrow</code></td>
+<td align="left"><span class="math inline">\(\Leftrightarrow\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">否定</td>
+<td align="left"><code>\lnot</code></td>
+<td align="left"><span class="math inline">\(\lnot\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">論理積</td>
+<td align="left"><code>\land</code></td>
+<td align="left"><span class="math inline">\(\land\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">論理和</td>
+<td align="left"><code>\lor</code></td>
+<td align="left"><span class="math inline">\(\lor\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">排他的論理和</td>
+<td align="left"><code>\oplus</code></td>
+<td align="left"><span class="math inline">\(\oplus\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">任意の</td>
+<td align="left"><code>\forall</code></td>
+<td align="left"><span class="math inline">\(\forall\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">存在する</td>
+<td align="left"><code>\exists</code></td>
+<td align="left"><span class="math inline">\(\exists\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">定義記号</td>
+<td align="left"><code>:=</code></td>
+<td align="left"><span class="math inline">\(:=\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="代表的な集合" class="section level3" number="6.4.6">
+<h3><span class="header-section-number">6.4.6</span> 代表的な集合</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">意味</th>
+<th align="left">Latexコード</th>
+<th align="left">表示</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">自然数</td>
+<td align="left"><code>\mathbb N</code></td>
+<td align="left"><span class="math inline">\(\mathbb N\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">整数</td>
+<td align="left"><code>\mathbb Z</code></td>
+<td align="left"><span class="math inline">\(\mathbb Z\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">正の整数</td>
+<td align="left"><code>\mathbb Z^+</code></td>
+<td align="left"><span class="math inline">\(\mathbb Z^+\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">有理数</td>
+<td align="left"><code>\mathbb Q</code></td>
+<td align="left"><span class="math inline">\(\mathbb Q\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">無理数</td>
+<td align="left"><code>\mathbb R \setminus \mathbb Q</code></td>
+<td align="left"><span class="math inline">\(\mathbb R \setminus \mathbb Q\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">実数</td>
+<td align="left"><code>\mathbb R</code></td>
+<td align="left"><span class="math inline">\(\mathbb R\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">複素数</td>
+<td align="left"><code>\mathbb C</code></td>
+<td align="left"><span class="math inline">\(\mathbb C\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="集合演算" class="section level3" number="6.4.7">
+<h3><span class="header-section-number">6.4.7</span> 集合演算</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">意味</th>
+<th align="left">Latexコード</th>
+<th align="left">表示</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">含む</td>
+<td align="left"><code>\in</code></td>
+<td align="left"><span class="math inline">\(\in\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">含まない</td>
+<td align="left"><code>\notin</code></td>
+<td align="left"><span class="math inline">\(\notin\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">部分集合である</td>
+<td align="left"><code>\subset</code></td>
+<td align="left"><span class="math inline">\(\subset\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">部分集合ではない</td>
+<td align="left"><code>\not\subset</code></td>
+<td align="left"><span class="math inline">\(\not\subset\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">共通部分</td>
+<td align="left"><code>\cap</code></td>
+<td align="left"><span class="math inline">\(\cap\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">共通部分</td>
+<td align="left"><code>\bigcap</code></td>
+<td align="left"><span class="math inline">\(\bigcap\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">和集合</td>
+<td align="left"><code>\cup</code></td>
+<td align="left"><span class="math inline">\(\cup\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">和集合</td>
+<td align="left"><code>\bigcup</code></td>
+<td align="left"><span class="math inline">\(\bigcup\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">分割</td>
+<td align="left"><code>\sqcup</code></td>
+<td align="left"><span class="math inline">\(\sqcup\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">分割</td>
+<td align="left"><code>\bigsqcup</code></td>
+<td align="left"><span class="math inline">\(\bigsqcup\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">差集合</td>
+<td align="left"><code>\setminus</code></td>
+<td align="left"><span class="math inline">\(\setminus\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">空集合</td>
+<td align="left"><code>\emptyset</code></td>
+<td align="left"><span class="math inline">\(\emptyset\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">空集合</td>
+<td align="left"><code>\varnothing</code></td>
+<td align="left"><span class="math inline">\(\varnothing\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">冪集合</td>
+<td align="left"><code>\mathfrak{P}(A)</code></td>
+<td align="left"><span class="math inline">\(\mathfrak{P}(A)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">冪集合</td>
+<td align="left"><code>\mathcal{P}(A)</code></td>
+<td align="left"><span class="math inline">\(\mathcal{P}(A)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="場合の和確率" class="section level3" number="6.4.8">
+<h3><span class="header-section-number">6.4.8</span> 場合の和・確率</h3>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">意味</th>
+<th align="left">Latexコード</th>
+<th align="left">表示</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">順列</td>
+<td align="left"><code>{}_n P_r</code></td>
+<td align="left"><span class="math inline">\({}_n P_r\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">組み合わせ</td>
+<td align="left"><code>{}_n C_r</code></td>
+<td align="left"><span class="math inline">\({}_n C_r\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">組み合わせ</td>
+<td align="left"><code>n \choose r</code></td>
+<td align="left"><span class="math inline">\(n \choose r\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">確率変数<span class="math inline">\(X\)</span>が標準正規分布に従う</td>
+<td align="left"><code>X \sim N(0,1)</code></td>
+<td align="left"><span class="math inline">\(X \sim N(0,1)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">独立に同一の分布に従う(i.i.d)</td>
+<td align="left"><code>\overset{\text\small\textrm{iid}}{\sim}</code></td>
+<td align="left"><span class="math inline">\(\overset{\textrm{iid}}{\sim}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ベクトルと行列" class="section level3" number="6.4.9">
+<h3><span class="header-section-number">6.4.9</span> ベクトルと行列</h3>
+<p>縦・横ベクトル</p>
+<pre><code>$$
+\begin{align}
+  &amp;\begin{pmatrix}
+    a &amp; b &amp; c
+  \end{pmatrix} \\
+  &amp;\begin{pmatrix}
+    a \\ b \\ c
+  \end{pmatrix}
+\end{align}
+$$</code></pre>
+<p><span class="math display">\[
+\begin{gather}
+  &amp;\begin{pmatrix}
+    a &amp; b &amp; c
+  \end{pmatrix} \\
+  &amp;\begin{pmatrix}
+    a \\ b \\ c
+  \end{pmatrix}
+\end{gather}
+\]</span></p>
+<p>行列</p>
+<pre><code>$$
+\begin{gather}
+  &amp;\begin{pmatrix}
+    a_{11} &amp; a_{12} &amp; a_{13} \\
+    a_{21} &amp; a_{22} &amp; a_{23} \\
+  \end{pmatrix} \\ \\
+  
+  &amp;\begin{bmatrix}
+    a_{11} &amp; a_{12} &amp; a_{13} \\
+    a_{21} &amp; a_{22} &amp; a_{23} \\
+  \end{bmatrix} \\ \\
+  
+  &amp;\begin{matrix}
+    a_{11} &amp; a_{12} &amp; a_{13} \\
+    a_{21} &amp; a_{22} &amp; a_{23} \\
+  \end{matrix}
+\end{gather}
+$$</code></pre>
+<p><span class="math display">\[\begin{gather}
+  &amp;\begin{pmatrix}
+    a_{11} &amp; a_{12} &amp; a_{13} \\
+    a_{21} &amp; a_{22} &amp; a_{23} \\
+  \end{pmatrix} \\ \\
+  
+  &amp;\begin{bmatrix}
+    a_{11} &amp; a_{12} &amp; a_{13} \\
+    a_{21} &amp; a_{22} &amp; a_{23} \\
+  \end{bmatrix} \\ \\
+  
+  &amp;\begin{matrix}
+    a_{11} &amp; a_{12} &amp; a_{13} \\
+    a_{21} &amp; a_{22} &amp; a_{23} \\
+  \end{matrix}
+\end{gather}\]</span></p>
+</div>
+<div id="場合分け" class="section level3" number="6.4.10">
+<h3><span class="header-section-number">6.4.10</span> 場合分け</h3>
+<pre><code>$$
+f(x) = 
+\begin{cases}
+  1 &amp; \text{if} \hspace{3mm} 0 \leq x \leq 1 \\
+  0 &amp; \text{else}
+\end{cases}
+$$</code></pre>
+<p><span class="math display">\[
+f(x) = 
+\begin{cases}
+  1 &amp; \text{if} \hspace{3mm} 0 \leq x \leq 1 \\
+  0 &amp; \text{else}
+\end{cases}
+\]</span></p>
+</div>
+<div id="ギリシャ文字" class="section level3" number="6.4.11">
+<h3><span class="header-section-number">6.4.11</span> ギリシャ文字</h3>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">意味</th>
+<th align="left">大文字</th>
+<th align="left">小文字</th>
+<th align="left">表示</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">アルファ</td>
+<td align="left"><code>A</code></td>
+<td align="left"><code>\alpha</code></td>
+<td align="left"><span class="math inline">\(A, \alpha\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">ベータ</td>
+<td align="left"><code>B</code></td>
+<td align="left"><code>\beta</code></td>
+<td align="left"><span class="math inline">\(B, \beta\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">ガンマ</td>
+<td align="left"><code>\Gamma, \varGamma</code></td>
+<td align="left"><code>\gamma</code></td>
+<td align="left"><span class="math inline">\(\Gamma, \varGamma,\gamma\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">デルタ</td>
+<td align="left"><code>\Delta, \varDelta</code></td>
+<td align="left"><code>\delta</code></td>
+<td align="left"><span class="math inline">\(\Delta, \varDelta, \delta\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">イプシロン</td>
+<td align="left"><code>E</code></td>
+<td align="left"><code>\epsilon, \varepsilon</code></td>
+<td align="left"><span class="math inline">\(E, \epsilon, \varepsilon\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">ゼータ</td>
+<td align="left"><code>Z</code></td>
+<td align="left"><code>\zeta</code></td>
+<td align="left"><span class="math inline">\(Z, \zeta\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">エータ</td>
+<td align="left"><code>H</code></td>
+<td align="left"><code>\eta</code></td>
+<td align="left"><span class="math inline">\(H, \eta\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">シータ</td>
+<td align="left"><code>\Theta, \varTheta</code></td>
+<td align="left"><code>\theta, \vartheta</code></td>
+<td align="left"><span class="math inline">\(\Theta, \varTheta, \theta, \vartheta\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">イオタ</td>
+<td align="left"><code>I</code></td>
+<td align="left"><code>\iota</code></td>
+<td align="left"><span class="math inline">\(I, \iota\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">カッパ</td>
+<td align="left"><code>K</code></td>
+<td align="left"><code>\kappa, \varkappa</code></td>
+<td align="left"><span class="math inline">\(K, \kappa, \varkappa\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">ラムダ</td>
+<td align="left"><code>\Lambda, \varLambda</code></td>
+<td align="left"><code>\lambda</code></td>
+<td align="left"><span class="math inline">\(\Lambda, \varLambda, \lambda\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">ミュー</td>
+<td align="left"><code>M</code></td>
+<td align="left"><code>\mu</code></td>
+<td align="left"><span class="math inline">\(M, \mu\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">ニュー</td>
+<td align="left"><code>N</code></td>
+<td align="left"><code>\nu</code></td>
+<td align="left"><span class="math inline">\(N, \nu\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">クシー・グザイ</td>
+<td align="left"><code>\Xi,\varXi</code></td>
+<td align="left"><code>\xi</code></td>
+<td align="left"><span class="math inline">\(\Xi, \varXi, \xi\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">オミクロン</td>
+<td align="left"><code>O</code></td>
+<td align="left"><code>\o</code></td>
+<td align="left"><span class="math inline">\(O, o\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">パイ</td>
+<td align="left"><code>\Pi,\varPi</code></td>
+<td align="left"><code>\pi, \varpi</code></td>
+<td align="left"><span class="math inline">\(\Pi, \varPi, \pi, \varpi\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">ロー</td>
+<td align="left"><code>\P</code></td>
+<td align="left"><code>\rho, \varrho</code></td>
+<td align="left"><span class="math inline">\(P, \rho, \varrho\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">シグマ</td>
+<td align="left"><code>\Sigma, \varSigma</code></td>
+<td align="left"><code>\sigma, \varsigma</code></td>
+<td align="left"><span class="math inline">\(\Sigma, \varSigma, \sigma, \varsigma\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">タウ</td>
+<td align="left"><code>T</code></td>
+<td align="left"><code>\tau</code></td>
+<td align="left"><span class="math inline">\(T, \tau\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">ウプシロン</td>
+<td align="left"><code>\Upsilon, \varUpsilon</code></td>
+<td align="left"><code>\upsilon</code></td>
+<td align="left"><span class="math inline">\(\Upsilon, \varUpsilon, \upsilon\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">ファイ</td>
+<td align="left"><code>\Phi, \varPhi</code></td>
+<td align="left"><code>\phi, \varphi</code></td>
+<td align="left"><span class="math inline">\(\Phi, \varPhi, \phi, \varphi\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">カイ</td>
+<td align="left"><code>X</code></td>
+<td align="left"><code>\chi</code></td>
+<td align="left"><span class="math inline">\(X, \chi\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">プサイ</td>
+<td align="left"><code>\Psi, \varPsi</code></td>
+<td align="left"><code>\psi</code></td>
+<td align="left"><span class="math inline">\(\Psi, \varPsi, \psi\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">オメガ</td>
+<td align="left"><code>\Omega, \varOmega</code></td>
+<td align="left"><code>\omega</code></td>
+<td align="left"><span class="math inline">\(\Omega, \varOmega, \omega\)</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="確率の概念.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="集合.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

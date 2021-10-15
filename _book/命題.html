@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | My bookdown tutorial</title>
-  <meta name="description" content="Page not found | My bookdown tutorial" />
+  <title>8 命題 | My bookdown tutorial</title>
+  <meta name="description" content="8 命題 | My bookdown tutorial" />
   <meta name="generator" content="bookdown 0.24.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | My bookdown tutorial" />
+  <meta property="og:title" content="8 命題 | My bookdown tutorial" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | My bookdown tutorial" />
+  <meta name="twitter:title" content="8 命題 | My bookdown tutorial" />
   
   
   
@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
+<link rel="prev" href="集合.html"/>
 
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -231,18 +231,203 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="命題" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> 命題</h1>
+<p>「命題」とは真偽のどちらか一方のみが成立するものを指します．例えば</p>
+<ul>
+<li><span class="math inline">\(100\)</span>より大きな自然数が存在する</li>
+<li><span class="math inline">\(57\)</span>は素数である</li>
+</ul>
+<p>などはそれぞれ真偽のどちらか一方は成立し，他方は不成立となるのでこれは命題です．しかし</p>
+<ul>
+<li>あの人は男である</li>
+</ul>
+<p>といったものは命題ではありません（身体的には男性だが性自認は女性というケースもある）．</p>
+<div id="命題の組み合わせ" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> 命題の組み合わせ</h2>
+<p>命題の組み合わせ方は以下の４つに限られます．ここで<span class="math inline">\(P, Q\)</span>をそれぞれ命題として</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\neg P\)</span>:<span class="math inline">\(P\)</span>でない</li>
+<li><span class="math inline">\(P \land Q\)</span>:<span class="math inline">\(P\)</span>かつ<span class="math inline">\(Q\)</span></li>
+<li><span class="math inline">\(P \lor Q\)</span>:<span class="math inline">\(P\)</span>または<span class="math inline">\(Q\)</span></li>
+<li><span class="math inline">\(P \Rightarrow Q\)</span>:<span class="math inline">\(P\)</span>ならば<span class="math inline">\(Q\)</span></li>
+</ol>
+<p>です．これらを幾度も繰り返して複雑な命題を作ることもできます．
+便宜上，<span class="math inline">\(P \Leftrightarrow Q\)</span>は<span class="math inline">\((P \Rightarrow Q) \land (Q \Rightarrow P)\)</span>を意味する記号として良く使われます．</p>
+</div>
+<div id="十分条件と必要条件" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> 十分条件と必要条件</h2>
+<p><span class="math inline">\(P \Rightarrow Q\)</span>が成立するとき，<span class="math inline">\(P\)</span>は<span class="math inline">\(Q\)</span>の十分条件，<span class="math inline">\(Q\)</span>は<span class="math inline">\(P\)</span>の必要条件と言います．また
+<span class="math inline">\(P \Leftrightarrow Q\)</span>であるとき，<span class="math inline">\(P\)</span>と<span class="math inline">\(Q\)</span>は互いに必要十分条件である，と言います．</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-38" class="exercise"><strong>Exercise 8.1  </strong></span>命題<span class="math inline">\(P_1, P_2, P_3\)</span>に対して次の命題を翻訳してください．</p>
+<p><span class="math display">\[
+((\neg P_1) \land P_2) \lor (P_3 \Rightarrow (P_1 \lor P_2))
+\]</span></p>
+</div>
+</div>
+<div id="真偽値表" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> 真偽値表</h2>
+<p>命題の操作を簡潔にまとめた表を以下に示しておきます．ここで<span class="math inline">\(T\)</span>は真，<span class="math inline">\(F\)</span>は偽を表します．</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(P\)</span></th>
+<th align="center"><span class="math inline">\(Q\)</span></th>
+<th align="center"><span class="math inline">\(\neg P\)</span></th>
+<th align="center"><span class="math inline">\(P \land Q\)</span></th>
+<th align="center"><span class="math inline">\(P \lor Q\)</span></th>
+<th align="center"><span class="math inline">\(P \Rightarrow Q\)</span></th>
+<th align="center"><span class="math inline">\(P \Leftrightarrow Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(F\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(F\)</span></td>
+<td align="center"><span class="math inline">\(F\)</span></td>
+<td align="center"><span class="math inline">\(F\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(F\)</span></td>
+<td align="center"><span class="math inline">\(F\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(F\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(F\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(F\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(F\)</span></td>
+<td align="center"><span class="math inline">\(F\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(F\)</span></td>
+<td align="center"><span class="math inline">\(F\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(T\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="恒真命題と同値な命題" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> 恒真命題と同値な命題</h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-39" class="definition"><strong>Definition 8.1  (恒真命題) </strong></span>有限個の命題<span class="math inline">\(P_1, \ldots, P_n\)</span>と命題の組み合わせによって作られた命題<span class="math inline">\(P\)</span>を<span class="math inline">\(P(P_1,\ldots,P_n)\)</span>と表します．
+このとき，命題<span class="math inline">\(P(P_1,\ldots,P_n)\)</span>が各命題<span class="math inline">\(P_1,\ldots,P_n\)</span>の真偽によらず常に真であるとき，<span class="math inline">\(P\)</span>は恒真命題であるといいます．
+また，トートロジーであるいう場合もあります．</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-40" class="example"><strong>Example 8.1  </strong></span>命題<span class="math inline">\(P\)</span>に対して，<span class="math inline">\(P \Rightarrow P\)</span>という命題は恒真命題です．</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-41" class="example"><strong>Example 8.2  (排中律) </strong></span>命題<span class="math inline">\(P\)</span>に対して，命題<span class="math inline">\(P \lor (\neg P)\)</span>は恒真命題です．この恒真命題を排中律といいます．</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-42" class="definition"><strong>Definition 8.2  (同値な命題) </strong></span>有限個の命題<span class="math inline">\(P_1, \ldots, P_n\)</span>から作られた２つの命題<span class="math inline">\(P(P_1,\ldots,P_n)\)</span>と<span class="math inline">\(Q(P_1,\ldots,P_n)\)</span>について，命題<span class="math inline">\(P \Leftrightarrow Q\)</span>が恒真命題であるとき，この２つの命題は同値であるといい，<span class="math inline">\(P \equiv Q\)</span>と表します．</p>
+</div>
+<p>これより，命題<span class="math inline">\(P,Q\)</span>が同値であればどちらか一方の真偽を調べることで他方の真偽を確認できます．数学の証明などでよく使われるテクニックを紹介しましょう．</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-43" class="example"><strong>Example 8.3  (背理法) </strong></span>どんな命題<span class="math inline">\(P\)</span>の真偽も命題<span class="math inline">\(\neg(\neg P)\)</span>と一致します．すなわち，<span class="math inline">\(P \equiv \neg(\neg P)\)</span></p>
+</div>
+<p>背理法は，証明したい命題<span class="math inline">\(P\)</span>の否定の命題<span class="math inline">\(\neg P\)</span>を考察していき，この命題を評価することで最終的に<span class="math inline">\(P\)</span>を確かめる方法です．</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-44" class="example"><strong>Example 8.4  (対偶) </strong></span>どんな２つの命題<span class="math inline">\(P,Q\)</span>に対しても，命題<span class="math inline">\(P \Rightarrow Q\)</span>と命題<span class="math inline">\((\neg Q) \Rightarrow (\neg P)\)</span>の真偽は一致します．これを対偶といいます．</p>
+</div>
+<p>命題によっては対偶を考えることで証明がより簡単に行える場合があります．</p>
+</div>
+<div id="全称命題と存在命題" class="section level2" number="8.5">
+<h2><span class="header-section-number">8.5</span> 全称命題と存在命題</h2>
+<div id="集合と命題関数" class="section level3" number="8.5.1">
+<h3><span class="header-section-number">8.5.1</span> 集合と命題関数</h3>
+<p>集合の表し方について改めて考えていきましょう．ある集合<span class="math inline">\(\Omega\)</span>に対して<span class="math inline">\(x \in \Omega\)</span>を含む主張<span class="math inline">\(P(x)\)</span>が，各<span class="math inline">\(x\)</span>に対して命題であるとき，<span class="math inline">\(\Omega\)</span>上の条件と呼びましょう．このとき，条件<span class="math inline">\(P(x)\)</span>が真であるような<span class="math inline">\(x \in \Omega\)</span>の集まりで<span class="math inline">\(\Omega\)</span>の部分集合<span class="math inline">\(P\)</span>を構成できます．これを<span class="math inline">\(P=\{ x \in \Omega:P(x) \}\)</span>と書きます．</p>
+<p>このように考えると，集合に関する演算と命題の結合を以下のように対応させることができます．</p>
+<p>いま，条件<span class="math inline">\(P(x), Q(x)\)</span>で定まる集合<span class="math inline">\(P= \{ x \in \Omega:P(X) \}\)</span>，<span class="math inline">\(Q=\{ x \in \Omega:Q(X) \}\)</span>について，</p>
+<p><span class="math display">\[
+\begin{aligned}
+P \cap Q &amp;= \{ x \in \Omega: P(x) \land Q(x) \} \\
+P \cup Q &amp;= \{ x \in \Omega: P(x) \lor Q(x) \} \\
+P^c &amp;= \{ x \in \Omega: \neg P(x) \}
+\end{aligned}
+\]</span></p>
+<p>となります．</p>
+</div>
+<div id="全称命題と存在命題-1" class="section level3" number="8.5.2">
+<h3><span class="header-section-number">8.5.2</span> 全称命題と存在命題</h3>
+<p>前項で言及した全称記号と存在記号を用いて全称命題と存在命題を次のように定義します．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-45" class="definition"><strong>Definition 8.3  (全称命題と存在命題) </strong></span>集合<span class="math inline">\(\Omega\)</span>上の条件<span class="math inline">\(P(x)\)</span>に対して，「<span class="math inline">\({}^\forall x \in \Omega\)</span>について<span class="math inline">\(P(x)\)</span>は真である」という主張を全称命題と呼びます．これを</p>
+<p><span class="math display">\[
+{}^\forall x \in \Omega, P(X)
+\]</span></p>
+<p>と書き．同じように「<span class="math inline">\({}^\exists x \in \Omega\)</span>について<span class="math inline">\(P(x)\)</span>は真である」という主張を存在命題と呼び</p>
+<p><span class="math display">\[
+{}^\exists x \in \Omega, P(x)
+\]</span></p>
+<p>と書きます．</p>
+</div>
+<p>また，<span class="math inline">\(\rm s.t.\)</span>を使って「<span class="math inline">\({}^\exists x \in \Omega \ \rm{s.t.} \  P(x)\)</span>」のように表すこともあります．</p>
+</div>
+<div id="存在記号と一意な存在" class="section level3" number="8.5.3">
+<h3><span class="header-section-number">8.5.3</span> 存在記号と一意な存在</h3>
+<p>存在記号<span class="math inline">\(\exists\)</span>は，条件を満たすものが少なくとも１つは存在することを主張しているだけで，具体的にそれがどんなものであるか，またそれがいくつあるかは言及しません．一方で，命題によっては条件を満たすものが唯一存在することを主張する場合もあります．そのような場合は「存在が一意である」，「一意に存在する」，「唯一つに定まる」などと表現します．一意に存在することを記号で<span class="math inline">\(\exists 1\)</span>や<span class="math inline">\(\exists !\)</span>などと表すこともあります．</p>
+</div>
+<div id="全称命題と存在命題の例" class="section level3" number="8.5.4">
+<h3><span class="header-section-number">8.5.4</span> 全称命題と存在命題の例</h3>
+<p>全称命題と存在命題の概念に慣れることは，数学の言葉を理解するのに大いに役立ちます．ここではいくつか例を紹介します．</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-46" class="example"><strong>Example 8.5  (いくらでも大きい) </strong></span>「条件<span class="math inline">\(P(x)\)</span>を満たす，いくらでも大きな自然数<span class="math inline">\(n\)</span>が存在する」</p>
+<p>という形の主張があります．例えば，「いくらでも大きな素数がある」などが挙げられます．これを厳密に述べるために，次のように表現します．</p>
+<p>「どんな自然数<span class="math inline">\(N\)</span>に対しても，それより大きい<span class="math inline">\(n\)</span>が存在して，条件<span class="math inline">\(P(x)\)</span>を満たす．」</p>
+<p>これを記号で書けば</p>
+<p><span class="math display">\[
+{}^\forall N \in \mathbb N, {}^\exists n \in \mathbb N, \hspace{3mm} \rm{s.t.} \hspace{3mm} (n &gt; N) \land P(n).
+\]</span></p>
+<p>とできます．</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-47" class="example"><strong>Example 8.6  (十分大きい) </strong></span>「十分に大きい自然数<span class="math inline">\(n\)</span>について条件<span class="math inline">\(P(x)\)</span>が成り立つ」というタイプの主張があります．例えば「十分に大きい自然数<span class="math inline">\(n\)</span>について，<span class="math inline">\(100n &lt; n^2\)</span>が成り立つ」と言ったものです．これは，具体的にどこからかについては言及しないが，そこから先の自然数については常に成立していることを意味しています．この「十分に大きい」をもっと厳密に述べると</p>
+<p>「ある自然数<span class="math inline">\(N\)</span>に対して，それよりも大きいどんな<span class="math inline">\(n\)</span>についても，条件<span class="math inline">\(P(n)\)</span>を満たす」となります．これを記号で書くと</p>
+<p><span class="math display">\[
+{}^\exists N \in \mathbb N, {}^\forall n \in \mathbb N, \hspace{3mm} \rm{s.t.} \hspace{3mm} (n &gt; N) \land P(n).
+\]</span></p>
+<p>となります．</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-48" class="example"><strong>Example 8.7  (単位元の存在) </strong></span>「自然数<span class="math inline">\(e\)</span>が存在して，どんな自然数<span class="math inline">\(n\)</span>に対しても積<span class="math inline">\(en\)</span>の結果が<span class="math inline">\(n\)</span>になる」ということを記号で書けば</p>
+<p><span class="math display">\[
+{}^\exists e \in \mathbb N, {}^\forall n \in \mathbb N, ne=n.
+\]</span></p>
+<p>となります．</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-49" class="example"><strong>Example 8.8  (逆元の存在) </strong></span>「どんな自然数<span class="math inline">\(n\)</span>に対しても，<span class="math inline">\(n\)</span>との積の結果が<span class="math inline">\(1\)</span>になるような数<span class="math inline">\(p\)</span>（自然数とは限らない）」が存在する」これを記号で書けば</p>
+<p><span class="math display">\[
+{}^\forall n \in \mathbb N, {}^\exists p \in \Omega, np=1.
+\]</span></p>
+<p>実際，<span class="math inline">\(n\)</span>に対して<span class="math inline">\(p = 1/n\)</span>を取れば成り立ちます．</p>
+</div>
+
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
+<a href="集合.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

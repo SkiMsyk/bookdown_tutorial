@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 集合 | My bookdown tutorial</title>
+  <meta name="description" content="7 集合 | My bookdown tutorial" />
+  <meta name="generator" content="bookdown 0.24.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 集合 | My bookdown tutorial" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 集合 | My bookdown tutorial" />
+  
+  
+  
+
+<meta name="author" content="Masayuki Sakai" />
+
+
+<meta name="date" content="2021-10-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="r-notebookの書き方.html"/>
+<link rel="next" href="命題.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> はじめに</a></li>
+<li class="chapter" data-level="2" data-path="rの基本と数学的な基礎事項.html"><a href="rの基本と数学的な基礎事項.html"><i class="fa fa-check"></i><b>2</b> Rの基本と数学的な基礎事項</a></li>
+<li class="chapter" data-level="3" data-path="数式の表現.html"><a href="数式の表現.html"><i class="fa fa-check"></i><b>3</b> 数式の表現</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="数式の表現.html"><a href="数式の表現.html#定理や証明"><i class="fa fa-check"></i><b>3.1</b> 定理や証明</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="まとめ.html"><a href="まとめ.html"><i class="fa fa-check"></i><b>4</b> まとめ</a></li>
+<li class="chapter" data-level="5" data-path="確率の概念.html"><a href="確率の概念.html"><i class="fa fa-check"></i><b>5</b> 確率の概念</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="確率の概念.html"><a href="確率の概念.html#順列と組み合わせによる数え上げ"><i class="fa fa-check"></i><b>5.1</b> 順列と組み合わせによる数え上げ</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="確率の概念.html"><a href="確率の概念.html#順列permutation"><i class="fa fa-check"></i><b>5.1.1</b> 順列：Permutation</a></li>
+<li class="chapter" data-level="5.1.2" data-path="確率の概念.html"><a href="確率の概念.html#組み合わせcombination"><i class="fa fa-check"></i><b>5.1.2</b> 組み合わせ：Combination</a></li>
+<li class="chapter" data-level="5.1.3" data-path="確率の概念.html"><a href="確率の概念.html#演習問題"><i class="fa fa-check"></i><b>5.1.3</b> 演習問題</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="確率の概念.html"><a href="確率の概念.html#集合と確率"><i class="fa fa-check"></i><b>5.2</b> 集合と確率</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="確率の概念.html"><a href="確率の概念.html#集合の演算と確率"><i class="fa fa-check"></i><b>5.2.1</b> 集合の演算と確率</a></li>
+<li class="chapter" data-level="5.2.2" data-path="確率の概念.html"><a href="確率の概念.html#余事象とその確率"><i class="fa fa-check"></i><b>5.2.2</b> 余事象とその確率</a></li>
+<li class="chapter" data-level="5.2.3" data-path="確率の概念.html"><a href="確率の概念.html#条件付確率"><i class="fa fa-check"></i><b>5.2.3</b> 条件付確率</a></li>
+<li class="chapter" data-level="5.2.4" data-path="確率の概念.html"><a href="確率の概念.html#ベイズの定理"><i class="fa fa-check"></i><b>5.2.4</b> ベイズの定理</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html"><i class="fa fa-check"></i><b>6</b> R Notebookの書き方</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#r-notebookの基本html"><i class="fa fa-check"></i><b>6.1</b> R Notebookの基本:HTML</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#r-notebookファイルを作成する"><i class="fa fa-check"></i><b>6.1.1</b> R Notebookファイルを作成する</a></li>
+<li class="chapter" data-level="6.1.2" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#r-notebookによるhtmlの生成"><i class="fa fa-check"></i><b>6.1.2</b> R NotebookによるHTMLの生成</a></li>
+<li class="chapter" data-level="6.1.3" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#yamlヘッダー"><i class="fa fa-check"></i><b>6.1.3</b> YAMLヘッダー</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#markdownの基本的な記法"><i class="fa fa-check"></i><b>6.2</b> Markdownの基本的な記法</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#見出し"><i class="fa fa-check"></i><b>6.2.1</b> 見出し</a></li>
+<li class="chapter" data-level="6.2.2" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#箇条書き"><i class="fa fa-check"></i><b>6.2.2</b> 箇条書き</a></li>
+<li class="chapter" data-level="6.2.3" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#コードブロック"><i class="fa fa-check"></i><b>6.2.3</b> コードブロック</a></li>
+<li class="chapter" data-level="6.2.4" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#その他の書式設定"><i class="fa fa-check"></i><b>6.2.4</b> その他の書式設定</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#rのコードを記述する"><i class="fa fa-check"></i><b>6.3</b> Rのコードを記述する</a></li>
+<li class="chapter" data-level="6.4" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#latex記法"><i class="fa fa-check"></i><b>6.4</b> Latex記法</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#基本的な使い方"><i class="fa fa-check"></i><b>6.4.1</b> 基本的な使い方</a></li>
+<li class="chapter" data-level="6.4.2" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#複数の数式を整列させるalign-gather"><i class="fa fa-check"></i><b>6.4.2</b> 複数の数式を整列させる：align, gather</a></li>
+<li class="chapter" data-level="6.4.3" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#基本的な表記"><i class="fa fa-check"></i><b>6.4.3</b> 基本的な表記</a></li>
+<li class="chapter" data-level="6.4.4" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#微分積分"><i class="fa fa-check"></i><b>6.4.4</b> 微分積分</a></li>
+<li class="chapter" data-level="6.4.5" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#論理演算"><i class="fa fa-check"></i><b>6.4.5</b> 論理演算</a></li>
+<li class="chapter" data-level="6.4.6" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#代表的な集合"><i class="fa fa-check"></i><b>6.4.6</b> 代表的な集合</a></li>
+<li class="chapter" data-level="6.4.7" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#集合演算"><i class="fa fa-check"></i><b>6.4.7</b> 集合演算</a></li>
+<li class="chapter" data-level="6.4.8" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#場合の和確率"><i class="fa fa-check"></i><b>6.4.8</b> 場合の和・確率</a></li>
+<li class="chapter" data-level="6.4.9" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#ベクトルと行列"><i class="fa fa-check"></i><b>6.4.9</b> ベクトルと行列</a></li>
+<li class="chapter" data-level="6.4.10" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#場合分け"><i class="fa fa-check"></i><b>6.4.10</b> 場合分け</a></li>
+<li class="chapter" data-level="6.4.11" data-path="r-notebookの書き方.html"><a href="r-notebookの書き方.html#ギリシャ文字"><i class="fa fa-check"></i><b>6.4.11</b> ギリシャ文字</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="集合.html"><a href="集合.html"><i class="fa fa-check"></i><b>7</b> 集合</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="集合.html"><a href="集合.html#集合の定義"><i class="fa fa-check"></i><b>7.1</b> 集合の定義</a></li>
+<li class="chapter" data-level="7.2" data-path="集合.html"><a href="集合.html#基本的な集合"><i class="fa fa-check"></i><b>7.2</b> 基本的な集合</a></li>
+<li class="chapter" data-level="7.3" data-path="集合.html"><a href="集合.html#集合の要素に関する記号"><i class="fa fa-check"></i><b>7.3</b> 集合の要素に関する記号</a></li>
+<li class="chapter" data-level="7.4" data-path="集合.html"><a href="集合.html#部分集合と包含関係"><i class="fa fa-check"></i><b>7.4</b> 部分集合と包含関係</a></li>
+<li class="chapter" data-level="7.5" data-path="集合.html"><a href="集合.html#冪べき集合"><i class="fa fa-check"></i><b>7.5</b> 冪（べき）集合</a></li>
+<li class="chapter" data-level="7.6" data-path="集合.html"><a href="集合.html#集合の演算"><i class="fa fa-check"></i><b>7.6</b> 集合の演算　　</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="集合.html"><a href="集合.html#添字集合"><i class="fa fa-check"></i><b>7.6.1</b> 添字集合</a></li>
+<li class="chapter" data-level="7.6.2" data-path="集合.html"><a href="集合.html#集合族に対する演算"><i class="fa fa-check"></i><b>7.6.2</b> 集合族に対する演算</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="命題.html"><a href="命題.html"><i class="fa fa-check"></i><b>8</b> 命題</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="命題.html"><a href="命題.html#命題の組み合わせ"><i class="fa fa-check"></i><b>8.1</b> 命題の組み合わせ</a></li>
+<li class="chapter" data-level="8.2" data-path="命題.html"><a href="命題.html#十分条件と必要条件"><i class="fa fa-check"></i><b>8.2</b> 十分条件と必要条件</a></li>
+<li class="chapter" data-level="8.3" data-path="命題.html"><a href="命題.html#真偽値表"><i class="fa fa-check"></i><b>8.3</b> 真偽値表</a></li>
+<li class="chapter" data-level="8.4" data-path="命題.html"><a href="命題.html#恒真命題と同値な命題"><i class="fa fa-check"></i><b>8.4</b> 恒真命題と同値な命題</a></li>
+<li class="chapter" data-level="8.5" data-path="命題.html"><a href="命題.html#全称命題と存在命題"><i class="fa fa-check"></i><b>8.5</b> 全称命題と存在命題</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="命題.html"><a href="命題.html#集合と命題関数"><i class="fa fa-check"></i><b>8.5.1</b> 集合と命題関数</a></li>
+<li class="chapter" data-level="8.5.2" data-path="命題.html"><a href="命題.html#全称命題と存在命題-1"><i class="fa fa-check"></i><b>8.5.2</b> 全称命題と存在命題</a></li>
+<li class="chapter" data-level="8.5.3" data-path="命題.html"><a href="命題.html#存在記号と一意な存在"><i class="fa fa-check"></i><b>8.5.3</b> 存在記号と一意な存在</a></li>
+<li class="chapter" data-level="8.5.4" data-path="命題.html"><a href="命題.html#全称命題と存在命題の例"><i class="fa fa-check"></i><b>8.5.4</b> 全称命題と存在命題の例</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">My bookdown tutorial</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="集合" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> 集合</h1>
+<p>集合の言葉に慣れると，数学的な説明がよりわかりやすくかつシンプルに理解できるようになります．ここでは言葉として「集合」を扱うことに慣れるために種々の概念を紹介していきます．</p>
+<div id="集合の定義" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> 集合の定義</h2>
+<p>集合とは「ものの集まり」です．この「もの」は基本的にどんなものでも構いません．数学では必然的に「数」を扱うことが多いですが場合によっては文字（人や果物の名前など）の場合もあるでしょう．
+また関数や集合そのものも集まりの対象として捉えることができます．例えば，学校の「クラス」などは人の集合がある条件を満たす場合の呼び方と捉えることができるでしょう．また「家族」自体は人の集合ですが，その家族の集合も考えることができますね．そしてこの「もの」のことと要素とか元と呼びます．ここでは「要素」を採用しましょう．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-16" class="definition"><strong>Definition 7.1  (集合) </strong></span>集合とは要素の集まりです．要素はどんなものでも構いませんが，どんな要素と集合を考えてもその要素が集合に含まれるのか，含まれないのかは常にどちらかに決まります．ただし，集合は自身を要素には含まないものとします．</p>
+</div>
+<p>各要素<span class="math inline">\(x\)</span>がある集合<span class="math inline">\(X\)</span>に含まれることを<span class="math inline">\(x \in X\)</span>と表します．逆に含まれないことは<span class="math inline">\(x \notin X\)</span>と表します．
+集合の要素は常にある集合に含まれるか，含まれないかのどちらかが確定しなくてはいけません．これは集合を扱う上で重要なポイントです．つまり，ある集合<span class="math inline">\(X\)</span>に対して要素<span class="math inline">\(x\)</span>が<span class="math inline">\(x \in X\)</span>かつ<span class="math inline">\(x \notin X\)</span>どちらも成り立つということは考えません．</p>
+<p>集合を記述する場合は各要素を<span class="math inline">\(\{ \}\)</span>の中に<span class="math inline">\(,\)</span>で区切って列挙します．例えば，<span class="math inline">\(1\)</span>から<span class="math inline">\(5\)</span>までの整数を要素に持つ集合<span class="math inline">\(A\)</span>は</p>
+<p><span class="math display">\[
+  A = \{ 1,2,3,4,5 \}
+\]</span></p>
+<p>と記述します．集合の要素が多い場合は次のように省略するか，<span class="math inline">\(|\)</span>で区切って要素に共通するルールを記述します．</p>
+<p><span class="math display">\[
+\begin{align}
+  A^\prime &amp;= \{ 1,2,\ldots,49,50 \} \\
+  A^\prime &amp;= \{ n | 1 \leq n \leq 50, n \in \mathbb N\}
+\end{align}
+\]</span></p>
+<p><span class="math inline">\(1,2,\ldots\)</span>のように記述されている場合は，要素が無限に続いていることを意味しています．また<span class="math inline">\(\mathbb N\)</span>は全ての自然数の集合を表します．</p>
+</div>
+<div id="基本的な集合" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> 基本的な集合</h2>
+<p>集合を扱う上で知っておくべき基本的な集合を紹介していきます．</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-17" class="example"><strong>Example 7.1  (空集合) </strong></span>要素を１つも持たない集合を空集合と呼び，<span class="math inline">\(\emptyset\)</span>と書きます．すなわちどんな要素<span class="math inline">\(x\)</span>を持ってきても<span class="math inline">\(x \notin \emptyset\)</span>が成り立ちます．</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-18" class="example"><strong>Example 7.2  (よく使われる集合) </strong></span>自然数・整数・有理数・実数についてそれぞれ全体のなす集合を表す記号を定義します．これらはよく使われるので是非覚えてください．</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">集合</th>
+<th align="left">記号</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">自然数</td>
+<td align="left"><span class="math inline">\(\mathbb N\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">整数</td>
+<td align="left"><span class="math inline">\(\mathbb Z\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">正の整数</td>
+<td align="left"><span class="math inline">\(\mathbb Z^{+}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">負の整数</td>
+<td align="left"><span class="math inline">\(\mathbb Z^{-}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">有理数</td>
+<td align="left"><span class="math inline">\(\mathbb Q\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">実数</td>
+<td align="left"><span class="math inline">\(\mathbb R\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-19" class="example"><strong>Example 7.3  (実数の区間) </strong></span>実数の区間は中学，高校の数学で扱ったと思います．これも集合の言葉で言えば実数の集合です．すなわち<span class="math inline">\(a,b \in \mathbb R\)</span>で<span class="math inline">\(a &lt; b\)</span>のとき，<span class="math inline">\(a\)</span>以上<span class="math inline">\(b\)</span>以下である全ての実数のなす集合を<span class="math inline">\([a,b]\)</span>と表します．これを閉区間ともよびます．これは次のように記述することもできます．</p>
+<p><span class="math display">\[
+[a,b] = \{ x : x \in \mathbb R, a \leq x \leq b \}
+\]</span></p>
+<p>また，<span class="math inline">\(a\)</span>より大きく<span class="math inline">\(b\)</span>より小さい全ての実数のなす集合を<span class="math inline">\((a,b)\)</span>と表し，これを開区間とよびます．これは次のように記述できます．</p>
+<p><span class="math display">\[
+(a,b) = \{ x : x \in \mathbb R, a &lt; x &lt; b \}
+\]</span></p>
+<p>これらを組み合わせて，<span class="math inline">\(a \leq x &lt; b\)</span>といった条件の集合を考えることもでき，これを半開区間と呼んだりします．また無限大を表す<span class="math inline">\(\infty\)</span>を使って</p>
+<p><span class="math display">\[
+(a, \infty) = \{ x : x \in \mathbb R, a &lt; x \}
+\]</span></p>
+<p><span class="math display">\[
+(-\infty, b) = \{ x : x \in \mathbb R, x &lt; b \}
+\]</span></p>
+<p>という集合を記述することもできます．ここで，無限大はある特定の数を意味しないので<span class="math inline">\([-\infty,\infty]\)</span>のようには表さないことに注意してください．</p>
+</div>
+</div>
+<div id="集合の要素に関する記号" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> 集合の要素に関する記号</h2>
+<p>ある要素<span class="math inline">\(x\)</span>が集合<span class="math inline">\(X\)</span>に含まれることを<span class="math inline">\(x \in X\)</span>と記述しましたが，ある集合<span class="math inline">\(X\)</span>の要素<span class="math inline">\(x\)</span>について述べる時，それが<span class="math inline">\(X\)</span>に含まれるどんな要素でも良いのか，特定の要素の場合だけを考えるかの２つの場合があります．
+そのような場合に便利な記法があるので紹介します．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-20" class="definition"><strong>Definition 7.2  (全称記号と存在記号) </strong></span><span class="math inline">\(X\)</span>に含まれる任意の要素であることを</p>
+<p><span class="math display">\[
+{}^\forall x \in X
+\]</span></p>
+<p>と表します．また，そのような要素<span class="math inline">\(x\)</span>が少なくとも一つは存在することを</p>
+<p><span class="math display">\[
+{}^\exists x \in X
+\]</span></p>
+<p>と表します．</p>
+</div>
+<p>例えば，自明ですが<span class="math inline">\(A = \{x:x \in \mathbb N, x \leq 50 \}\)</span>については，<span class="math inline">\({}^\forall a \in A\)</span>に対して<span class="math inline">\(a \leq 50\)</span>が成り立ちます．一方<span class="math inline">\(a \leq 10\)</span>という条件は任意の<span class="math inline">\(A\)</span>の要素について成り立つわけではありませんが少なくとも１つはそのような要素は存在するわけですから，<span class="math inline">\({}^\exists x \in A\)</span>で<span class="math inline">\(a \leq 10\)</span>が成り立ちます．</p>
+</div>
+<div id="部分集合と包含関係" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> 部分集合と包含関係</h2>
+<p>集合と集合の関係で最も基本的なもので<strong>包含関係</strong>が挙げられます．すなわち，一方の集合が他方に含まれているかどうかです．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-21" class="definition"><strong>Definition 7.3  (部分集合と包含関係) </strong></span>集合<span class="math inline">\(A,B\)</span>について，<span class="math inline">\({}^\forall a \in A\)</span>が<span class="math inline">\(a \in B\)</span>であるとき，<span class="math inline">\(B\)</span>は<span class="math inline">\(A\)</span>を包含する，または含むといいます．
+<span class="math inline">\(B\)</span>が<span class="math inline">\(A\)</span>を含む時，<span class="math inline">\(A\)</span>は<span class="math inline">\(B\)</span>の部分集合であるといい<span class="math inline">\(A \subset B\)</span>と表します．</p>
+</div>
+<p>次に，集合についての等号（<span class="math inline">\(=\)</span>）について次のように定義します．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-22" class="definition"><strong>Definition 7.4  (集合の等号成立) </strong></span>集合<span class="math inline">\(A,B\)</span>について，<span class="math inline">\(A \subset B\)</span>かつ<span class="math inline">\(B \subset A\)</span>が成り立つ時，集合<span class="math inline">\(A\)</span>と<span class="math inline">\(B\)</span>は等しいといい<span class="math inline">\(A = B\)</span>と表します．
+また，集合<span class="math inline">\(A\)</span>と<span class="math inline">\(B\)</span>が等しくないとき<span class="math inline">\(A \neq B\)</span>と表します．</p>
+</div>
+<p>最後に真部分集合について次のように定義しておきます．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-23" class="definition"><strong>Definition 7.5  (真部分集合) </strong></span>集合<span class="math inline">\(A,B\)</span>について<span class="math inline">\(A \subset B\)</span>かつ<span class="math inline">\(A \neq B\)</span>が成り立つ時，<span class="math inline">\(A\)</span>は<span class="math inline">\(B\)</span>の真部分集合であるといいます．</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-24" class="example"><strong>Example 7.4  </strong></span>集合<span class="math inline">\(A, B, C\)</span>をそれぞれ次のように定義します．</p>
+<p><span class="math display">\[
+\begin{aligned}
+  A &amp;= \{ 1,2,3,4 \} \\
+  B &amp;= \{ 1,2,3,4,5 \} \\
+  C &amp;= \{ 4,3,2,1 \}
+\end{aligned}
+\]</span></p>
+<p>このとき，<span class="math inline">\(A \subset B\)</span>と<span class="math inline">\(A \subset C\)</span>両方成り立っていますが，<span class="math inline">\(A\)</span>は<span class="math inline">\(B\)</span>の真部分集合である一方，<span class="math inline">\(A\)</span>は<span class="math inline">\(C\)</span>の真部分集合ではありません．</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-25" class="exercise"><strong>Exercise 7.1  </strong></span>次の３つの集合について真部分集合を一つあげてください．</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\mathbb N\)</span></li>
+<li><span class="math inline">\(\mathbb R\)</span></li>
+<li><span class="math inline">\(\mathbb Q\)</span></li>
+</ol>
+</div>
+</div>
+<div id="冪べき集合" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> 冪（べき）集合</h2>
+<p>ある集合<span class="math inline">\(A\)</span>に対して，その部分集合を元とする集合を考えることができます．特に部分集合全体のなす集合はよく扱われます．そこで，このような集合を<strong>冪（べき）集合</strong>と呼び次のように定義します．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-26" class="definition"><strong>Definition 7.6  (冪（べき）集合) </strong></span>集合<span class="math inline">\(A\)</span>に対して，その部分集合の全体のなす集合を<span class="math inline">\(A\)</span>の冪集合と呼び，<span class="math inline">\(2^A\)</span>と書きます．すなわち</p>
+<p><span class="math display">\[
+2^A = \{ X : X \subset A \}
+\]</span></p>
+<p>です．</p>
+</div>
+<p>冪集合の「冪」は冪乗から来ているが，<span class="math inline">\(2^A\)</span>と表すのは部分集合全体が<span class="math inline">\(A\)</span>に含まれる全ての要素がそれぞれ含まれるか含まれないかの２通りの組み合わせで表せることから来ています．
+また，冪集合のように集合を元とする集合のことを<strong>集合族</strong>とよび明確に集合と分ける流儀もあります．</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-27" class="example"><strong>Example 7.5  (冪集合の例) </strong></span>集合<span class="math inline">\(A = \{1,2,3\}\)</span>について，その冪集合<span class="math inline">\(2^A\)</span>は次のようになります．</p>
+<p><span class="math display">\[
+2^A = \{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 3 \},\{ 1,2 \}, \{ 2,3 \}, \{ 1,3 \}, \{ 1,2,3 \} \}
+\]</span></p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-28" class="exercise"><strong>Exercise 7.2  </strong></span>集合<span class="math inline">\(A = \{ a,b,c,d,e,f \}\)</span>について，その冪集合の要素がいくつになるか計算してください．</p>
+</div>
+</div>
+<div id="集合の演算" class="section level2" number="7.6">
+<h2><span class="header-section-number">7.6</span> 集合の演算　　</h2>
+<p>既にいくつか集合同士の関係を記述する記号を紹介しましたが，ここでは集合同士の<strong>演算</strong>を定義していきます．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-29" class="definition"><strong>Definition 7.7  (共通部分と和集合) </strong></span>集合<span class="math inline">\(A,B\)</span>について，<span class="math inline">\(x \in A\)</span>かつ<span class="math inline">\(x \in B\)</span>であるような要素<span class="math inline">\(x\)</span>全体のなす集合を<span class="math inline">\(A\)</span>と<span class="math inline">\(B\)</span>の共通部分・共通集合とよび<span class="math inline">\(A \cap B\)</span>と書きます．
+すなわち</p>
+<p><span class="math display">\[
+A \cap B = \{x:x \in A \hspace{3mm}  \rm{and} \hspace{3mm} x \in B \}
+\]</span></p>
+<p>です．また，<span class="math inline">\(y \in A\)</span>または<span class="math inline">\(y \in B\)</span>であるような要素<span class="math inline">\(y\)</span>全体のなす集合を和集合と呼び<span class="math inline">\(A \cup B\)</span>と書きます．すなわち
+<span class="math display">\[
+A \cup B = \{x:x \in A \hspace{3mm} \rm{or} \hspace{3mm} x \in B \}
+\]</span>
+です．</p>
+</div>
+<p>つぎに，引き算にあたる<strong>差集合</strong>を次のように定義します．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 7.8  (差集合) </strong></span>集合<span class="math inline">\(A,B\)</span>について，<span class="math inline">\(x \in A\)</span>かつ<span class="math inline">\(x \notin B\)</span>であるような要素<span class="math inline">\(x\)</span>全体のなす集合を<span class="math inline">\(A \hspace{1mm} \backslash \hspace{1mm}  B\)</span>と表します．</p>
+</div>
+<p>差集合と定義は似ていますが，補集合を次のように定義します．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-31" class="definition"><strong>Definition 7.9  (補集合) </strong></span>ある集合<span class="math inline">\(\Omega\)</span>を興味の対象である要素全てを含む集合，すなわち全体集合とするとき，<span class="math inline">\(A \subset \Omega\)</span>であるような集合<span class="math inline">\(A\)</span>について，
+<span class="math inline">\(\Omega \hspace{1mm} \backslash \hspace{1mm}  A\)</span>を<span class="math inline">\(A\)</span>の補集合といいます．これを<span class="math inline">\(A^c\)</span>と表します．すなわち</p>
+<p><span class="math display">\[
+A^c = \Omega \hspace{1mm} \backslash \hspace{1mm}  A = \{x:x \in \Omega, x \notin A \}
+\]</span></p>
+<p>です．</p>
+</div>
+<p>共通部分や和集合については，演算の順番によらず結果は同じになりますが，差集合については演算の順番により結果が変わることに注意してください．
+実際，<span class="math inline">\(A = \{ 1,3,5,6 \}\)</span>，<span class="math inline">\(B = \{ 1,2,3 \}\)</span>とすると</p>
+<p><span class="math display">\[
+\begin{aligned}
+  A \hspace{1mm} \backslash \hspace{1mm}  B &amp;= \{ 5,6 \} \\
+  B \hspace{1mm} \backslash \hspace{1mm}  A &amp;= \{ 2 \}
+\end{aligned}
+\]</span></p>
+<p>となります．</p>
+<p>包含関係と補集合について次の定理が成り立ちます．</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-32" class="theorem"><strong>Theorem 7.1  </strong></span>全体集合<span class="math inline">\(\Omega\)</span>とその部分集合<span class="math inline">\(A,B\)</span>について，<span class="math inline">\(A \in B\)</span>ならば<span class="math inline">\(B^c \in A^c\)</span>が成り立ちます．</p>
+</div>
+<p>これはベン図を用いればすぐにわかるでしょう．</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-33" class="theorem"><strong>Theorem 7.2  (ド・モルガンの法則) </strong></span>全体集合<span class="math inline">\(\Omega\)</span>とその部分集合<span class="math inline">\(A,B\)</span>について，<span class="math inline">\((A \cap B)^c = A^c \cup B^c\)</span>が成り立ちます．
+また，<span class="math inline">\((A \cup B)^c = A^c \cap B^c\)</span>も成り立ちます．</p>
+</div>
+<p>証明は割愛します．</p>
+<div id="添字集合" class="section level3" number="7.6.1">
+<h3><span class="header-section-number">7.6.1</span> 添字集合</h3>
+<p>共通部分<span class="math inline">\(\cap\)</span>と和集合<span class="math inline">\(\cup\)</span>を有限個の集合に対する演算に拡張します．いま<span class="math inline">\(n\)</span>個の集合があるとして，それらを<span class="math inline">\(A_1, A_2, \ldots, A_n\)</span>と表すことにしましょう．この時<span class="math inline">\(A\)</span>の左下についている文字（ここでは数字）を<strong>添字（そえじ）</strong>と呼びます．そして，集合族<span class="math inline">\(\mathcal A = \{ A_1, A_2, \ldots, A_n \}\)</span>を考えましょう．このとき添字の集合<span class="math inline">\(I = \{ 1,2,\ldots,n \}\)</span>をそのまま集合族<span class="math inline">\(\mathcal A\)</span>の添字集合と呼びます．添字集合を用いることで，要素の多い集合や集合族の記述が簡単になります．</p>
+<p>例えば，<span class="math inline">\(\mathcal A = \{ A_i : i \in I \}\)</span>で<span class="math inline">\(I = \{i:i \in \mathbb N, i &lt;= n \}\)</span>とかけます．</p>
+<p>添字集合は数字でなくでも<span class="math inline">\(a,b,c\)</span>のようなものでも良いですしもっと複雑なものでも構いません．これはあくまで要素を区別するための記号です．記述のしやすさという観点でみれば，自然数を使うのが良いでしょう．また，添字集合の要素は有限個でも無限個でも構いません．書き方として，<span class="math inline">\(\{ x_i \}_{i \in \mathbb N}\)</span>のように添字集合の定義をそのまま左下に記述するケースもありますし，より明白な場合は<span class="math inline">\({x_s}_{0 \leq s \leq 1}\)</span>などと略す書き方もあります．</p>
+</div>
+<div id="集合族に対する演算" class="section level3" number="7.6.2">
+<h3><span class="header-section-number">7.6.2</span> 集合族に対する演算</h3>
+<p>集合族について，共通部分と和集合の演算を次のように定義します．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-34" class="definition"><strong>Definition 7.10  (集合族の共通部分と和集合) </strong></span>集合族<span class="math inline">\(\mathcal A = \{A_i\}_{i \in I}\)</span>について，その共通部分を</p>
+<p><span class="math display">\[
+\bigcap_{i \in I} A_i = \{ x: {}^\forall i \in I, x \in A_i \}
+\]</span></p>
+<p>と定義します．同様にその和集合を</p>
+<p><span class="math display">\[
+\bigcup_{i \in I} A_i = \{ x: {}^\exists i \in I, x \in A_i \}
+\]</span></p>
+<p>と定義します．</p>
+</div>
+<p>この記号については，<span class="math inline">\(\sum_{i=1}^{n}\)</span>と同じように表記されることもあります．</p>
+<p><span class="math display">\[
+\bigcap_{i=1}^{n} A_i, \  \bigcap_{i=1}^{\infty} A_i, \  \bigcup_{i=1}^{n} A_i, \  \bigcup_{i=1}^{\infty} A_i
+\]</span></p>
+<p>さらに，集合族の和集合の特別な場合として<strong>直和</strong>の概念を定義しておきます．</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-35" class="definition"><strong>Definition 7.11  (集合の分割と直和) </strong></span>集合族<span class="math inline">\(\mathcal A\)</span>の和集合<span class="math inline">\(A = \bigcup_{i \in I} A_i\)</span>について，どの相異なる２つの集合<span class="math inline">\(A_j, A_k(j \neq k)\)</span>についても<span class="math inline">\(A_j \cap A_k = \emptyset\)</span>となるとき，その和集合<span class="math inline">\(A\)</span>は<span class="math inline">\(\{ A_i \}_{i \in I}\)</span>で分割されているといいます．また逆に，<span class="math inline">\(A\)</span>は<span class="math inline">\(\{ A_i \}_{i \in I}\)</span>らの直和であるといいます．</p>
+<p>このことを記号を用いて
+<span class="math display">\[
+\bigsqcup_{i \in I} A_i
+\]</span></p>
+<p>と表します．他にも，<span class="math inline">\(A_1 \sqcup \cdots \sqcup A_n\)</span>のように列挙して表すこともあります．</p>
+</div>
+<p>典型的な例を以下に示します．</p>
+<div class="example">
+<p><span id="exm:ex-infty-intersection-and-union" class="example"><strong>Example 7.6  (無限個の区間の共通部分と和集合) </strong></span><span class="math inline">\(n \in \mathbb N\)</span>について，実数の区間<span class="math inline">\(A_n = [0, 1/n]\)</span>を考えます．このような集合全体のなす集合族<span class="math inline">\(\{ A_n \}_{n \in \mathbb N}\)</span>について</p>
+<p><span class="math display">\[
+\bigcap_{n \in \mathbb N} A_n = \bigcap_{n \in \mathbb N} [0, 1/n] = \{ 0 \}
+\]</span></p>
+<p>となります．また</p>
+<p><span class="math display">\[
+\bigcup_{n \in \mathbb N} = [0, 1]
+\]</span></p>
+<p>も成り立ちます．</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-36" class="exercise"><strong>Exercise 7.3  </strong></span>例<a href="集合.html#exm:ex-infty-intersection-and-union">7.6</a>を確かめてください．</p>
+</div>
+<p>最後にド・モルガンの法則の集合族版を以下に紹介します．</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-37" class="theorem"><strong>Theorem 7.3  (ド・モルガンの法則) </strong></span>集合族<span class="math inline">\(\mathcal A\)</span>について，以下が成り立ちます．</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left( \bigcap_{i \in I} A_i \right)^c &amp;= \bigcup_{i \in I} A_i^c \\
+\left( \bigcup_{i \in I} A_i \right)^c &amp;= \bigcap_{i \in I} A_i^c
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="r-notebookの書き方.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="命題.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
